@@ -266,12 +266,18 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     5. View Program Performance
     6. Quit""")
 
-        user_option = input('Enter a menu option: ')
-        print()
-        try:
-            user_option = float(user_option)
-        except ValueError:
-            user_option = menu(input(f'Your option "{user_option}" is invalid. Please enter a valid menu option: '))
+        valid = False
+        while valid == False:
+            user_option = input('Enter a menu option: ')
+            try:
+                user_option = int(user_option)
+                if user_option >= 1 and user_option <= 6:
+                    print()
+                    valid = True
+                else:
+                    raise ValueError
+            except ValueError:
+                print(f'Your option "{user_option}" is invalid.', end=' ')
 
         if user_option == 1:
             print(power_df)
