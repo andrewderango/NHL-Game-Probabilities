@@ -265,6 +265,11 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     4. View Model Performance
     5. View Program Performance
     6. Quit""")
+    # Most/Least Consistent Teams ?
+    # Individual Team Game Log (best/worst games)
+    # biggest upsets
+    # probability big board
+    # Give users option to download csv's
 
         valid = False
         while valid == False:
