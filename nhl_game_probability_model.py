@@ -18,7 +18,7 @@ class Team():
         self.prev_power = 0
         self.goals_for = 0
         self.goals_against = 0
-        self.record = None
+        self.record = '0-0-0'
         self.pct = 0
 
     def read_games(self):
