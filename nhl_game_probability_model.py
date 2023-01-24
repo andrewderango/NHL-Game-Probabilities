@@ -16,6 +16,10 @@ class Team():
         self.schedule = 0
         self.power = 0
         self.prev_power = 0
+        self.goals_for = 0
+        self.goals_against = 0
+        self.record = None
+        self.pct = 0
 
     def read_games(self):
         print(f'--{self.name.upper()} GAME LIST--')
@@ -45,6 +49,14 @@ class Team():
 
     def calc_power(self):
         return self.calc_sched() + self.agd
+
+    def calc_pct(self):
+        wins = int(self.record[:self.record.find('-')])
+        losses = int(self.record[len(str(wins))+1:][:self.record[len(str(wins))+1:].find('-')])
+        otl = int(self.record[len(str(losses))+len(str(wins))+2:])
+        point_percentage = (wins*2+otl)/(len(self.team_game_list)*2)
+        return point_percentage
+
 
 class Game():
     def __init__(self, home_team, away_team, home_score, away_score):
@@ -84,6 +96,12 @@ def game_team_object_creation(games_metadf):
 
             home_team_obj.team_game_list.append(game_obj)
             away_team_obj.team_game_list.append(game_obj)
+            home_team_obj.goals_for += game_obj.home_score
+            away_team_obj.goals_against += game_obj.home_score
+            home_team_obj.goals_against += game_obj.away_score
+            away_team_obj.goals_for += game_obj.away_score
+            home_team_obj.record = row['Home Record']
+            away_team_obj.record = row['Away Record']
             total_game_list.append(game_obj)
         except ValueError: 
             pass
@@ -106,6 +124,7 @@ def scrape_nhl_data():
 def assign_power(team_list, iterations):
     for team in team_list:
         team.agd = team.calc_agd()
+        team.pct = team.calc_pct()
 
     for iteration in range(iterations):
         # print(f'ITERATION {iteration+1}')
@@ -117,9 +136,9 @@ def assign_power(team_list, iterations):
             team.prev_power = team.power
 
 def prepare_power_rankings(team_list):
-    power_df = pd.DataFrame(columns = ['Team', 'POWER', 'Goal Differential', 'Strength of Schedule'])
+    power_df = pd.DataFrame()
     for team in team_list:
-        power_df = power_df.append({'Team':team.name, 'POWER':round(team.power,2), 'Goal Differential':round(team.calc_agd(),2), 'Strength of Schedule':round(team.schedule,2)}, ignore_index=True)
+        power_df = power_df.append({'Team':team.name, 'POWER':round(team.power,2), 'Record':team.record, 'PCT':f"{team.calc_pct():.3f}",'Avg Goal Differential':round(team.calc_agd(),2), 'GF/Game':f"{team.goals_for/len(team.team_game_list):.2f}", 'GA/Game':f"{team.goals_against/len(team.team_game_list):.2f}", 'Strength of Schedule':f"{team.schedule:.3f}"}, ignore_index=True)
     power_df.sort_values(by=['POWER'], inplace=True, ascending=False)
     power_df = power_df.reset_index(drop=True)
     power_df.index += 1 
@@ -156,16 +175,24 @@ def model_performance(xpoints, ypoints, param):
     print(f'Precise Parameter: {param}')
 
     plt.plot(xpoints, ypoints, 'o', color='grey')
-    plt.plot(x_fitted, y_fitted, color='black', alpha=1)
-    # plt.plot(x_fitted, y_fitted, color='black', alpha=1, label=f'CDF (R² = {log_loss(ypoints, 1/(1+np.exp((xpoints)/param))):.3f})')
-    # plt.legend()
+    # plt.plot(x_fitted, y_fitted, color='black', alpha=1)
+    plt.plot(x_fitted, y_fitted, color='black', alpha=1, label=f'CDF (Log Loss = {log_loss(ypoints, 1/(1+np.exp((xpoints)/param))):.3f})')
+    plt.legend()
     plt.title('Logistic Regression of Team Rating Difference vs Game Result')
     plt.xlabel('Rating Difference')
     plt.ylabel('Win Probability')
     plt.show()
 
-def calc_prob(home_team, away_team, param):
-    return 1/(1+np.exp((home_team.power-away_team.power)/param))
+def calc_prob(team, opponent, param):
+    return 1/(1+np.exp((team.power-opponent.power)/param))
+
+def calc_spread(team, opponent, param, lower_bound_spread, upper_bound_spread):
+    if lower_bound_spread == '-inf': 
+        return 1/(1+np.exp((lower_bound_spread-(team.power-opponent.power))/param))
+    elif upper_bound_spread == 'inf': 
+        return 1 - 1/(1+np.exp((lower_bound_spread-(team.power-opponent.power))/param))
+    else: 
+        return 1/(1+np.exp((upper_bound_spread-(team.power-opponent.power))/param)) - 1/(1+np.exp((lower_bound_spread-(team.power-opponent.power))/param))
 
 def get_todays_games(param, team_list):
     with urllib.request.urlopen("https://statsapi.web.nhl.com/api/v1/schedule?expand=schedule.linescore") as url:
@@ -216,14 +243,17 @@ def custom_game_selector(param, team_list):
 
     game_probability_df = pd.DataFrame(columns = ['', home_team.name, away_team.name])
 
-    home_win_prob = calc_prob(home_team, away_team, param)
     game_probability_df = game_probability_df.append({'':'Rating', home_team.name:f'{home_team.power:.3f}', away_team.name:f'{away_team.power:.3f}'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Win Probability', home_team.name:f'{home_win_prob*100:.2f}%', away_team.name:f'{(1-home_win_prob)*100:.2f}%'}, ignore_index = True)
-    # Add record? would have to add a function def calc_record to the Game class.
-    # Add spreads
-    # Add tie probability
-
+    game_probability_df = game_probability_df.append({'':'Record', home_team.name:f'{home_team.record}', away_team.name:f'{away_team.record}'}, ignore_index = True)
+    game_probability_df = game_probability_df.append({'':'Point PCT', home_team.name:f'{home_team.pct:.3f}', away_team.name:f'{away_team.pct:.3f}'}, ignore_index = True)
+    game_probability_df = game_probability_df.append({'':'Win Probability', home_team.name:f'{calc_prob(home_team, away_team, param)*100:.2f}%', away_team.name:f'{(calc_prob(away_team, home_team, param))*100:.2f}%'}, ignore_index = True)
+    game_probability_df = game_probability_df.append({'':'Win by 1 Goal', home_team.name:f'{calc_spread(home_team, away_team, param, 0, 1.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 0, 1.5)*100:.2f}%'}, ignore_index = True)
+    game_probability_df = game_probability_df.append({'':'Win by 2 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 1.5, 2.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 1.5, 2.5)*100:.2f}%'}, ignore_index = True)
+    game_probability_df = game_probability_df.append({'':'Win by 3 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 2.5, 3.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 2.5, 3.5)*100:.2f}%'}, ignore_index = True)
+    game_probability_df = game_probability_df.append({'':'Win by 4 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 3.5, 4.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 3.5, 4.5)*100:.2f}%'}, ignore_index = True)
+    game_probability_df = game_probability_df.append({'':'Win by 5+ Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 4.5, "inf")*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 4.5, "inf")*100:.2f}%'}, ignore_index = True)
     game_probability_df = game_probability_df.set_index('')
+    print()
     print(game_probability_df)
 
 def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list):
@@ -235,12 +265,6 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     4. View Model Performance
     5. View Program Performance
     6. Quit""")
-    # Most/Least Consistent Teams ?
-    # Individual Team Game Log (best/worst games)
-    # biggest upsets
-    # probability big board (!!)
-    #Incorporate goal spreads + ties for custom game selector
-    # Give users option to download csv's
 
         user_option = input('Enter a menu option: ')
         print()
@@ -260,6 +284,7 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
         elif user_option == 5:
             print(f'Computation Time: {computation_time:.2f} seconds')
             print(f'Games Scraped: {len(total_game_list)}')
+            print(f'Rate: {len(total_game_list)/computation_time:.1f} games/second')
         elif user_option == 6:
             return
 
