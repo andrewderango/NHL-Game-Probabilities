@@ -57,6 +57,16 @@ class Team():
         point_percentage = (wins*2+otl)/(len(self.team_game_list)*2)
         return point_percentage
 
+    def calc_consistency(self):
+        performance_list = []
+        for game in self.team_game_list:
+            if self == game.home_team:
+                performance_list.append(game.away_team.power + game.home_score - game.away_score)
+            else:
+                performance_list.append(game.away_team.power + game.home_score - game.away_score)
+        
+        variance = np.var(performance_list)
+        return variance
 
 class Game():
     def __init__(self, home_team, away_team, home_score, away_score):
@@ -287,6 +297,20 @@ def get_best_performances(total_game_list):
     performance_df.index += 1
     return performance_df
 
+def get_team_consistency(team_list):
+    consistency_df = pd.DataFrame(columns = ['Team', 'Rating', 'Consistency (z-Score)'])
+
+    for team in team_list:
+        consistency_df = consistency_df.append({'Team':team.name, 'Rating':f'{team.power:.2f}', 'Consistency (z-Score)':team.calc_consistency()}, ignore_index = True)
+
+    consistency_df['Consistency (z-Score)'] = consistency_df['Consistency (z-Score)'].apply(lambda x: (x-consistency_df['Consistency (z-Score)'].mean())/-consistency_df['Consistency (z-Score)'].std())
+
+    consistency_df = consistency_df.sort_values(by=['Consistency (z-Score)'], ascending=False)
+    consistency_df = consistency_df.reset_index(drop=True)
+    consistency_df.index += 1
+    consistency_df['Consistency (z-Score)'] = consistency_df['Consistency (z-Score)'].apply(lambda x: f'{x:.2f}')
+    return consistency_df
+
 def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list):
     while True:
         print("""--MAIN MENU--
@@ -297,8 +321,9 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     5. View Program Performance
     6. Biggest Upsets
     7. Best Performances
-    8. Quit""")
-    # Most/Least Consistent Teams ?
+    8. Most Consistent Teams
+    9. Quit""")
+
     # Individual Team Game Log (best/worst games)
     # probability big board
     # Give users option to download csv's
@@ -309,7 +334,7 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
             user_option = input('Enter a menu option: ')
             try:
                 user_option = int(user_option)
-                if user_option >= 1 and user_option <= 8:
+                if user_option >= 1 and user_option <= 9:
                     print()
                     valid = True
                 else:
@@ -334,6 +359,8 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
         elif user_option == 7:
             print(get_best_performances(total_game_list))
         elif user_option == 8:
+            print(get_team_consistency(team_list))
+        elif user_option == 9:
             return
 
         input('Press ENTER to continue\t\t')
