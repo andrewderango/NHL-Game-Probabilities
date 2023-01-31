@@ -357,7 +357,6 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     # Individual Team Game Log (best/worst games)
     # probability big board
     # Give users option to download csv's
-    # should make an extras menu
 
         valid = False
         while valid == False:
