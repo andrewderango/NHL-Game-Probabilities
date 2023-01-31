@@ -69,11 +69,12 @@ class Team():
         return variance
 
 class Game():
-    def __init__(self, home_team, away_team, home_score, away_score):
+    def __init__(self, home_team, away_team, home_score, away_score, date):
         self.home_team = home_team
         self.away_team = away_team
         self.home_score = home_score
         self.away_score = away_score
+        self.date = date
 
 def game_team_object_creation(games_metadf):
     total_game_list = []
@@ -102,7 +103,7 @@ def game_team_object_creation(games_metadf):
                 away_team_obj = Team(row['Away Team'])
                 team_list.append(away_team_obj)
 
-            game_obj = Game(home_team_obj, away_team_obj, row['Home Goals'], row['Away Goals'])
+            game_obj = Game(home_team_obj, away_team_obj, row['Home Goals'], row['Away Goals'], row['Date'])
 
             home_team_obj.team_game_list.append(game_obj)
             away_team_obj.team_game_list.append(game_obj)
@@ -311,20 +312,47 @@ def get_team_consistency(team_list):
     consistency_df['Consistency (z-Score)'] = consistency_df['Consistency (z-Score)'].apply(lambda x: f'{x:.2f}')
     return consistency_df
 
+def team_game_log(team_list):
+    valid = False
+    while valid == False:
+        input_team = input('Enter a team: ')
+        for team_obj in team_list:
+            if input_team.strip().lower() == team_obj.name.lower().replace('é','e'):
+                team = team_obj
+                valid = True
+        if valid == False:
+            print('Sorry, I am not familiar with this team. Maybe check your spelling?')
+
+    game_log_df = pd.DataFrame(columns = ['Date', 'Opponent', 'GF', 'GA', 'Performance'])
+    for game in team.team_game_list:
+        if team == game.home_team:
+            goals_for = game.home_score
+            opponent = game.away_team
+            goals_against = game.away_score
+        else:
+            goals_for = game.away_score
+            opponent = game.home_team
+            goals_against = game.home_score
+        game_log_df = game_log_df.append({'Date':game.date, 'Opponent':opponent.name, 'GF':int(goals_for), 'GA':int(goals_against), 'Performance':round(opponent.power + goals_for - goals_against,2)}, ignore_index = True)
+    
+    game_log_df.index += 1 
+    return game_log_df
+
 def extra_menu(total_game_list, team_list):
     while True:
         print("""--EXTRAS MENU--
     1. Biggest Upsets
     2. Best Performances
     3. Most Consistent Teams
-    4. Exit to Main Menu""")
+    4. Team Game Logs
+    5. Exit to Main Menu""")
 
         valid = False
         while valid == False:
             user_option = input('Enter a menu option: ')
             try:
                 user_option = int(user_option)
-                if user_option >= 1 and user_option <= 4:
+                if user_option >= 1 and user_option <= 5:
                     print()
                     valid = True
                 else:
@@ -339,6 +367,8 @@ def extra_menu(total_game_list, team_list):
         elif user_option == 3:
             print(get_team_consistency(team_list))
         elif user_option == 4:
+            print(team_game_log(team_list))
+        elif user_option == 5:
             pass
 
         return
