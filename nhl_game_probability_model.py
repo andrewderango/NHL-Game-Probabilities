@@ -311,6 +311,38 @@ def get_team_consistency(team_list):
     consistency_df['Consistency (z-Score)'] = consistency_df['Consistency (z-Score)'].apply(lambda x: f'{x:.2f}')
     return consistency_df
 
+def extra_menu(total_game_list, team_list):
+    while True:
+        print("""--EXTRAS MENU--
+    1. Biggest Upsets
+    2. Best Performances
+    3. Most Consistent Teams
+    4. Exit to Main Menu""")
+
+        valid = False
+        while valid == False:
+            user_option = input('Enter a menu option: ')
+            try:
+                user_option = int(user_option)
+                if user_option >= 1 and user_option <= 4:
+                    print()
+                    valid = True
+                else:
+                    raise ValueError
+            except ValueError:
+                print(f'Your option "{user_option}" is invalid.', end=' ')
+
+        if user_option == 1:
+            print(get_upsets(total_game_list))
+        elif user_option == 2:
+            print(get_best_performances(total_game_list))
+        elif user_option == 3:
+            print(get_team_consistency(team_list))
+        elif user_option == 4:
+            pass
+
+        return
+
 def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list):
     while True:
         print("""--MAIN MENU--
@@ -319,10 +351,8 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     3. Custom Game Selector
     4. View Model Performance
     5. View Program Performance
-    6. Biggest Upsets
-    7. Best Performances
-    8. Most Consistent Teams
-    9. Quit""")
+    6. Extra Options
+    7. Quit""")
 
     # Individual Team Game Log (best/worst games)
     # probability big board
@@ -334,7 +364,7 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
             user_option = input('Enter a menu option: ')
             try:
                 user_option = int(user_option)
-                if user_option >= 1 and user_option <= 9:
+                if user_option >= 1 and user_option <= 7:
                     print()
                     valid = True
                 else:
@@ -355,12 +385,8 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
             print(f'Games Scraped: {len(total_game_list)}')
             print(f'Rate: {len(total_game_list)/computation_time:.1f} games/second')
         elif user_option == 6:
-            print(get_upsets(total_game_list))
+            extra_menu(total_game_list, team_list)
         elif user_option == 7:
-            print(get_best_performances(total_game_list))
-        elif user_option == 8:
-            print(get_team_consistency(team_list))
-        elif user_option == 9:
             return
 
         input('Press ENTER to continue\t\t')
