@@ -256,6 +256,37 @@ def custom_game_selector(param, team_list):
     print()
     print(game_probability_df)
 
+def get_upsets(total_game_list):
+    upset_df = pd.DataFrame(columns = ['Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'xGD', 'GD', 'Upset Rating'])
+
+    for game in total_game_list:
+        expected_score_diff = game.home_team.power - game.away_team.power #home - away
+        actaul_score_diff = game.home_score - game.away_score
+        upset_rating = actaul_score_diff - expected_score_diff #Positive score is an upset by the home team. Negative scores are upsets by the visiting team.
+
+        upset_df = upset_df.append({'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'xGD':f'{expected_score_diff:.2f}', 'GD':int(actaul_score_diff), 'Upset Rating':f'{abs(upset_rating):.2f}'}, ignore_index = True)
+
+    upset_df = upset_df.sort_values(by=['Upset Rating'], ascending=False)
+    upset_df = upset_df.reset_index(drop=True)
+    upset_df.index += 1
+    return upset_df
+
+def get_best_performances(total_game_list):
+    performance_df = pd.DataFrame(columns = ['Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'Performer', 'Performance'])
+
+    for game in total_game_list:
+        score_diff = game.home_score - game.away_score
+        home_performance = game.away_team.power + score_diff
+        away_performance = game.home_team.power - score_diff
+
+        performance_df = performance_df.append({'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'Performer':game.home_team.name, 'Performance':round(home_performance,2)}, ignore_index = True)
+        performance_df = performance_df.append({'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'Performer':game.away_team.name, 'Performance':round(away_performance,2)}, ignore_index = True)
+
+    performance_df = performance_df.sort_values(by=['Performance'], ascending=False)
+    performance_df = performance_df.reset_index(drop=True)
+    performance_df.index += 1
+    return performance_df
+
 def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list):
     while True:
         print("""--MAIN MENU--
@@ -264,19 +295,21 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     3. Custom Game Selector
     4. View Model Performance
     5. View Program Performance
-    6. Quit""")
+    6. Biggest Upsets
+    7. Best Performances
+    8. Quit""")
     # Most/Least Consistent Teams ?
     # Individual Team Game Log (best/worst games)
-    # biggest upsets
     # probability big board
     # Give users option to download csv's
+    # should make an extras menu
 
         valid = False
         while valid == False:
             user_option = input('Enter a menu option: ')
             try:
                 user_option = int(user_option)
-                if user_option >= 1 and user_option <= 6:
+                if user_option >= 1 and user_option <= 8:
                     print()
                     valid = True
                 else:
@@ -297,6 +330,10 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
             print(f'Games Scraped: {len(total_game_list)}')
             print(f'Rate: {len(total_game_list)/computation_time:.1f} games/second')
         elif user_option == 6:
+            print(get_upsets(total_game_list))
+        elif user_option == 7:
+            print(get_best_performances(total_game_list))
+        elif user_option == 8:
             return
 
         input('Press ENTER to continue\t\t')
