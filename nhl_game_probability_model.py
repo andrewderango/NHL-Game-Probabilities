@@ -384,8 +384,7 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     6. Extra Options
     7. Quit""")
 
-    # Individual Team Game Log (best/worst games)
-    # probability big board
+    # Probability big board
     # Give users option to download csv's
 
         valid = False
