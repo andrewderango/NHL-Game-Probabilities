@@ -422,7 +422,6 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     7. Quit""")
 
     # Give users option to download csv's
-    # Fix Best Performances to make it more sensible (and add dates)
 
         valid = False
         while valid == False:
