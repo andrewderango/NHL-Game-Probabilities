@@ -231,6 +231,7 @@ def get_todays_games(param, team_list):
         else:
             today_games_df = today_games_df.append({'GameID':games['gamePk'], 'Game State':'Pre-Game', 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}, ignore_index = True)
 
+    today_games_df.index += 1 
     return date, today_games_df
 
 def custom_game_selector(param, team_list):
@@ -285,15 +286,11 @@ def get_upsets(total_game_list):
     return upset_df
 
 def get_best_performances(total_game_list):
-    performance_df = pd.DataFrame(columns = ['Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'Performer', 'Performance'])
+    performance_df = pd.DataFrame(columns = ['Team', 'Opponent', 'GF', 'GA', 'Date', 'xGD', 'Performance'])
 
     for game in total_game_list:
-        score_diff = game.home_score - game.away_score
-        home_performance = game.away_team.power + score_diff
-        away_performance = game.home_team.power - score_diff
-
-        performance_df = performance_df.append({'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'Performer':game.home_team.name, 'Performance':round(home_performance,2)}, ignore_index = True)
-        performance_df = performance_df.append({'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'Performer':game.away_team.name, 'Performance':round(away_performance,2)}, ignore_index = True)
+        performance_df = performance_df.append({'Team':game.home_team.name, 'Opponent':game.away_team.name, 'GF':int(game.home_score), 'GA':int(game.away_score), 'Date':game.date, 'xGD':f'{game.home_team.power-game.away_team.power:.2f}', 'Performance':round(game.away_team.power+game.home_score-game.away_score,2)}, ignore_index = True)
+        performance_df = performance_df.append({'Team':game.away_team.name, 'Opponent':game.home_team.name, 'GF':int(game.away_score), 'GA':int(game.home_score), 'Date':game.date, 'xGD':f'{game.away_team.power-game.home_team.power:.2f}', 'Performance':round(game.home_team.power+game.away_score-game.home_score,2)}, ignore_index = True)
 
     performance_df = performance_df.sort_values(by=['Performance'], ascending=False)
     performance_df = performance_df.reset_index(drop=True)
@@ -410,6 +407,8 @@ def extra_menu(total_game_list, team_list, param):
             pass
 
         return
+
+
 
 def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list):
     while True:
