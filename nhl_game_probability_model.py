@@ -176,7 +176,7 @@ def logistic_regression(total_game_list):
     return xpoints, ypoints, param
 
 def model_performance(xpoints, ypoints, param):
-    x_fitted = np.linspace(np.min(xpoints), np.max(xpoints), 100)
+    x_fitted = np.linspace(np.min(xpoints)*1.25, np.max(xpoints)*1.25, 100)
     y_fitted = 1/(1+np.exp((x_fitted)/param))
 
     r, p = pearsonr(xpoints, ypoints)
@@ -198,8 +198,10 @@ def calc_prob(team, opponent, param):
     return 1/(1+np.exp((team.power-opponent.power)/param))
 
 def calc_spread(team, opponent, param, lower_bound_spread, upper_bound_spread):
-    if lower_bound_spread == '-inf': 
-        return 1/(1+np.exp((lower_bound_spread-(team.power-opponent.power))/param))
+    if lower_bound_spread == '-inf':
+        if upper_bound_spread == 'inf':
+            return 1
+        return 1/(1+np.exp((upper_bound_spread-(team.power-opponent.power))/param))
     elif upper_bound_spread == 'inf': 
         return 1 - 1/(1+np.exp((lower_bound_spread-(team.power-opponent.power))/param))
     else: 
@@ -268,14 +270,14 @@ def custom_game_selector(param, team_list):
     print(game_probability_df)
 
 def get_upsets(total_game_list):
-    upset_df = pd.DataFrame(columns = ['Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'xGD', 'GD', 'Upset Rating'])
+    upset_df = pd.DataFrame(columns = ['Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'Date', 'xGD', 'GD', 'Upset Rating'])
 
     for game in total_game_list:
         expected_score_diff = game.home_team.power - game.away_team.power #home - away
         actaul_score_diff = game.home_score - game.away_score
         upset_rating = actaul_score_diff - expected_score_diff #Positive score is an upset by the home team. Negative scores are upsets by the visiting team.
 
-        upset_df = upset_df.append({'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'xGD':f'{expected_score_diff:.2f}', 'GD':int(actaul_score_diff), 'Upset Rating':f'{abs(upset_rating):.2f}'}, ignore_index = True)
+        upset_df = upset_df.append({'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'Date':game.date,'xGD':f'{expected_score_diff:.2f}', 'GD':int(actaul_score_diff), 'Upset Rating':f'{abs(upset_rating):.2f}'}, ignore_index = True)
 
     upset_df = upset_df.sort_values(by=['Upset Rating'], ascending=False)
     upset_df = upset_df.reset_index(drop=True)
@@ -338,14 +340,48 @@ def team_game_log(team_list):
     game_log_df.index += 1 
     return game_log_df
 
-def extra_menu(total_game_list, team_list):
+def get_team_prob_breakdown(team_list, param):
+    valid = False
+    while valid == False:
+        input_team = input('Enter a team: ')
+        for team_obj in team_list:
+            if input_team.strip().lower() == team_obj.name.lower().replace('é','e'):
+                team = team_obj
+                valid = True
+        if valid == False:
+            print('Sorry, I am not familiar with this team. Maybe check your spelling?')
+
+    prob_breakdown_df = pd.DataFrame(columns = ['Opponent', 'Record', 'PCT', 'Win Probability', 'Lose by 5+', 'Lose by 4', 'Lose by 3', 'Lose by 2', 'Lose by 1', 'Win by 1', 'Win by 2', 'Win by 3', 'Win by 4', 'Win by 5+'])
+    for opp_team in team_list:
+        if opp_team is not team:
+            prob_breakdown_df = prob_breakdown_df.append({'Opponent': opp_team.name, 
+            'Record': opp_team.record,
+            'PCT': f'{opp_team.calc_pct():.3f}',
+            'Win Probability':f'{calc_prob(team, opp_team, param)*100:.2f}%', 
+            'Lose by 5+': f'{calc_spread(team, opp_team, param, "-inf", -4.5)*100:.2f}%',  #inf
+            'Lose by 4': f'{calc_spread(team, opp_team, param, -4.5, -3.5)*100:.2f}%', 
+            'Lose by 3': f'{calc_spread(team, opp_team, param, -3.5, -2.5)*100:.2f}%', 
+            'Lose by 2': f'{calc_spread(team, opp_team, param, -2.5, -1.5)*100:.2f}%', 
+            'Lose by 1': f'{calc_spread(team, opp_team, param, -1.5, 0)*100:.2f}%', 
+            'Win by 1': f'{calc_spread(team, opp_team, param, 0, 1.5)*100:.2f}%', 
+            'Win by 2': f'{calc_spread(team, opp_team, param, 1.5, 2.5)*100:.2f}%', 
+            'Win by 3': f'{calc_spread(team, opp_team, param, 2.5, 3.5)*100:.2f}%', 
+            'Win by 4': f'{calc_spread(team, opp_team, param, 3.5, 4.5)*100:.2f}%',
+            'Win by 5+': f'{calc_spread(team, opp_team, param, 4.5, "inf")*100:.2f}%'}, ignore_index = True) #inf
+
+    prob_breakdown_df = prob_breakdown_df.set_index('Opponent')
+    prob_breakdown_df = prob_breakdown_df.sort_values(by=['PCT'], ascending=False)
+    return prob_breakdown_df
+
+def extra_menu(total_game_list, team_list, param):
     while True:
         print("""--EXTRAS MENU--
     1. Biggest Upsets
     2. Best Performances
     3. Most Consistent Teams
     4. Team Game Logs
-    5. Exit to Main Menu""")
+    5. Team Probability Big Board
+    6. Exit to Main Menu""")
 
         valid = False
         while valid == False:
@@ -369,6 +405,8 @@ def extra_menu(total_game_list, team_list):
         elif user_option == 4:
             print(team_game_log(team_list))
         elif user_option == 5:
+            print(get_team_prob_breakdown(team_list, param))
+        elif user_option == 6:
             pass
 
         return
@@ -384,9 +422,8 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     6. Extra Options
     7. Quit""")
 
-    # Probability big board
     # Give users option to download csv's
-    # Team probability breakdown
+    # Fix Best Performances to make it more sensible (and add dates)
 
         valid = False
         while valid == False:
@@ -414,7 +451,7 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
             print(f'Games Scraped: {len(total_game_list)}')
             print(f'Rate: {len(total_game_list)/computation_time:.1f} games/second')
         elif user_option == 6:
-            extra_menu(total_game_list, team_list)
+            extra_menu(total_game_list, team_list, param)
         elif user_option == 7:
             return
 
