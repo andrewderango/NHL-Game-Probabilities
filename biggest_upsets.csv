@@ -1,0 +1,802 @@
+,Home Team,Home Goals,Away Goals,Away Team,Date,xGD,GD,Upset Rating
+1,Colorado Avalanche,7,0,Ottawa Senators,2023-01-14,0.52,7,6.48
+2,New York Rangers,1,5,Columbus Blue Jackets,2022-10-23,1.80,-4,5.80
+3,Washington Capitals,9,2,Montréal Canadiens,2022-12-31,1.35,7,5.65
+4,Carolina Hurricanes,0,4,Arizona Coyotes,2022-11-23,1.57,-4,5.57
+5,Buffalo Sabres,6,0,Los Angeles Kings,2022-12-13,0.54,6,5.46
+6,Arizona Coyotes,5,0,St. Louis Blues,2023-01-26,-0.34,5,5.34
+7,Minnesota Wild,6,1,Winnipeg Jets,2022-11-23,-0.28,5,5.28
+8,Calgary Flames,1,5,Chicago Blackhawks,2023-01-26,1.25,-4,5.25
+9,Detroit Red Wings,2,8,New York Rangers,2022-11-10,-0.89,-6,5.11
+10,Seattle Kraken,2,7,Edmonton Oilers,2022-12-30,0.08,-5,5.08
+11,Winnipeg Jets,5,0,Colorado Avalanche,2022-11-29,0.10,5,4.90
+12,Toronto Maple Leafs,2,6,Ottawa Senators,2023-01-27,0.89,-4,4.89
+13,Winnipeg Jets,0,4,Philadelphia Flyers,2023-01-28,0.83,-4,4.83
+14,Vancouver Canucks,5,1,Pittsburgh Penguins,2022-10-28,-0.77,4,4.77
+15,Carolina Hurricanes,7,2,Edmonton Oilers,2022-11-10,0.25,5,4.75
+16,San Jose Sharks,1,7,Edmonton Oilers,2023-01-13,-1.26,-6,4.74
+17,Winnipeg Jets,1,4,Columbus Blue Jackets,2022-12-02,1.74,-3,4.74
+18,Buffalo Sabres,0,4,Philadelphia Flyers,2023-01-09,0.73,-4,4.73
+19,Vegas Golden Knights,1,5,Vancouver Canucks,2022-11-26,0.71,-4,4.71
+20,Toronto Maple Leafs,7,0,Anaheim Ducks,2022-12-13,2.29,7,4.71
+21,New York Rangers,2,5,Chicago Blackhawks,2022-12-03,1.70,-3,4.70
+22,San Jose Sharks,5,1,Ottawa Senators,2022-11-21,-0.68,4,4.68
+23,Edmonton Oilers,8,2,Arizona Coyotes,2022-12-07,1.33,6,4.67
+24,Arizona Coyotes,6,3,Toronto Maple Leafs,2022-12-29,-1.63,3,4.63
+25,Pittsburgh Penguins,6,1,Los Angeles Kings,2022-10-20,0.40,5,4.60
+26,Carolina Hurricanes,2,6,New York Islanders,2022-10-28,0.59,-4,4.59
+27,Montréal Canadiens,4,1,Winnipeg Jets,2023-01-17,-1.53,3,4.53
+28,Florida Panthers,5,2,Boston Bruins,2022-11-23,-1.52,3,4.52
+29,Seattle Kraken,1,5,Florida Panthers,2022-12-03,0.51,-4,4.51
+30,Minnesota Wild,5,1,Tampa Bay Lightning,2023-01-04,-0.49,4,4.49
+31,Pittsburgh Penguins,6,2,Tampa Bay Lightning,2022-10-15,-0.44,4,4.44
+32,Washington Capitals,5,1,Tampa Bay Lightning,2022-11-11,-0.39,4,4.39
+33,New York Islanders,7,1,Anaheim Ducks,2022-10-15,1.64,6,4.36
+34,Vegas Golden Knights,1,5,Los Angeles Kings,2023-01-07,0.34,-4,4.34
+35,Chicago Blackhawks,1,7,New York Rangers,2022-12-18,-1.70,-6,4.30
+36,Anaheim Ducks,2,0,Dallas Stars,2023-01-04,-2.30,2,4.30
+37,Anaheim Ducks,1,6,San Jose Sharks,2022-12-09,-0.72,-5,4.28
+38,Winnipeg Jets,5,1,Dallas Stars,2022-11-08,-0.28,4,4.28
+39,Buffalo Sabres,8,3,Detroit Red Wings,2022-10-31,0.73,5,4.27
+40,Buffalo Sabres,1,4,Arizona Coyotes,2022-11-08,1.26,-3,4.26
+41,Arizona Coyotes,6,3,Colorado Avalanche,2022-12-27,-1.26,3,4.26
+42,New York Rangers,0,4,Washington Capitals,2022-12-27,0.25,-4,4.25
+43,Toronto Maple Leafs,1,5,Seattle Kraken,2023-01-05,0.23,-4,4.23
+44,Philadelphia Flyers,5,2,New Jersey Devils,2022-10-13,-1.18,3,4.18
+45,New Jersey Devils,2,5,Detroit Red Wings,2022-10-15,1.18,-3,4.18
+46,Montréal Canadiens,6,2,Arizona Coyotes,2022-10-20,-0.17,4,4.17
+47,New York Islanders,5,1,Pittsburgh Penguins,2022-12-27,-0.15,4,4.15
+48,Vegas Golden Knights,6,2,Washington Capitals,2023-01-21,-0.11,4,4.11
+49,Boston Bruins,6,0,Philadelphia Flyers,2023-01-16,1.89,6,4.11
+50,Toronto Maple Leafs,5,0,Los Angeles Kings,2022-12-08,0.90,5,4.10
+51,Detroit Red Wings,4,1,Toronto Maple Leafs,2023-01-12,-1.09,3,4.09
+52,Ottawa Senators,5,0,Montréal Canadiens,2023-01-28,0.91,5,4.09
+53,Columbus Blue Jackets,1,6,Detroit Red Wings,2022-11-19,-0.92,-5,4.08
+54,Arizona Coyotes,4,1,Vegas Golden Knights,2023-01-22,-1.07,3,4.07
+55,Detroit Red Wings,7,4,Tampa Bay Lightning,2022-12-21,-1.03,3,4.03
+56,San Jose Sharks,5,2,Minnesota Wild,2022-12-22,-1.02,3,4.02
+57,Boston Bruins,0,3,Seattle Kraken,2023-01-12,1.01,-3,4.01
+58,Vancouver Canucks,1,5,St. Louis Blues,2022-12-19,0.01,-4,4.01
+59,Dallas Stars,0,4,Toronto Maple Leafs,2022-12-06,0.01,-4,4.01
+60,Vegas Golden Knights,2,5,San Jose Sharks,2022-11-15,1.00,-3,4.00
+61,Edmonton Oilers,2,5,Vancouver Canucks,2022-12-23,0.97,-3,3.97
+62,Seattle Kraken,6,1,Vancouver Canucks,2023-01-25,1.05,5,3.95
+63,Florida Panthers,7,2,Montréal Canadiens,2022-12-29,1.07,5,3.93
+64,Washington Capitals,0,4,Colorado Avalanche,2022-11-19,-0.08,-4,3.92
+65,Colorado Avalanche,3,5,Anaheim Ducks,2023-01-26,1.92,-2,3.92
+66,Calgary Flames,6,2,Florida Panthers,2022-11-29,0.08,4,3.92
+67,New Jersey Devils,7,1,Columbus Blue Jackets,2022-10-30,2.09,6,3.91
+68,Columbus Blue Jackets,5,2,Philadelphia Flyers,2022-11-10,-0.91,3,3.91
+69,New York Islanders,5,1,Florida Panthers,2022-12-23,0.09,4,3.91
+70,Seattle Kraken,5,1,Buffalo Sabres,2022-10-25,0.14,4,3.86
+71,Tampa Bay Lightning,6,2,Seattle Kraken,2022-12-13,0.16,4,3.84
+72,Carolina Hurricanes,4,1,Boston Bruins,2023-01-29,-0.84,3,3.84
+73,Seattle Kraken,1,5,Carolina Hurricanes,2022-10-17,-0.17,-4,3.83
+74,Philadelphia Flyers,1,4,Chicago Blackhawks,2023-01-19,0.81,-3,3.81
+75,Philadelphia Flyers,5,1,St. Louis Blues,2022-11-08,0.19,4,3.81
+76,Montréal Canadiens,0,4,San Jose Sharks,2022-11-29,-0.24,-4,3.76
+77,Minnesota Wild,0,3,St. Louis Blues,2023-01-08,0.74,-3,3.74
+78,Vancouver Canucks,6,2,San Jose Sharks,2022-12-27,0.29,4,3.71
+79,Edmonton Oilers,2,6,Dallas Stars,2022-11-05,-0.32,-4,3.68
+80,Florida Panthers,3,0,Carolina Hurricanes,2022-11-09,-0.68,3,3.68
+81,Minnesota Wild,0,4,Seattle Kraken,2022-11-03,-0.32,-4,3.68
+82,Ottawa Senators,7,5,Boston Bruins,2022-10-18,-1.68,2,3.68
+83,Arizona Coyotes,2,5,Anaheim Ducks,2023-01-24,0.66,-3,3.66
+84,Minnesota Wild,3,7,New York Rangers,2022-10-13,-0.34,-4,3.66
+85,Vegas Golden Knights,1,5,New York Rangers,2022-12-07,-0.36,-4,3.64
+86,New York Islanders,4,7,St. Louis Blues,2022-12-06,0.64,-3,3.64
+87,Florida Panthers,5,1,Detroit Red Wings,2022-12-08,0.36,4,3.64
+88,Toronto Maple Leafs,2,4,Arizona Coyotes,2022-10-17,1.63,-2,3.63
+89,Colorado Avalanche,2,6,Toronto Maple Leafs,2022-12-31,-0.37,-4,3.63
+90,Calgary Flames,2,5,St. Louis Blues,2022-12-16,0.63,-3,3.63
+91,St. Louis Blues,1,5,Los Angeles Kings,2022-10-31,-0.38,-4,3.62
+92,Los Angeles Kings,6,3,Edmonton Oilers,2023-01-09,-0.60,3,3.60
+93,Calgary Flames,6,3,Tampa Bay Lightning,2023-01-21,-0.59,3,3.59
+94,San Jose Sharks,5,3,Dallas Stars,2023-01-18,-1.58,2,3.58
+95,Anaheim Ducks,1,6,Nashville Predators,2022-12-30,-1.42,-5,3.58
+96,Nashville Predators,6,2,St. Louis Blues,2022-10-27,0.42,4,3.58
+97,Seattle Kraken,2,4,Montréal Canadiens,2022-12-06,1.57,-2,3.57
+98,Montréal Canadiens,2,7,Buffalo Sabres,2022-11-22,-1.43,-5,3.57
+99,Toronto Maple Leafs,5,1,Washington Capitals,2023-01-29,0.45,4,3.55
+100,New Jersey Devils,3,6,Washington Capitals,2022-10-24,0.54,-3,3.54
+101,Montréal Canadiens,5,2,Vancouver Canucks,2022-11-09,-0.53,3,3.53
+102,St. Louis Blues,4,7,Montréal Canadiens,2022-10-29,0.52,-3,3.52
+103,Ottawa Senators,4,1,Buffalo Sabres,2022-11-16,-0.52,3,3.52
+104,Montréal Canadiens,2,5,Anaheim Ducks,2022-12-15,0.48,-3,3.48
+105,Philadelphia Flyers,6,2,Arizona Coyotes,2023-01-05,0.53,4,3.47
+106,Philadelphia Flyers,0,3,San Jose Sharks,2022-10-23,0.47,-3,3.47
+107,New York Rangers,6,2,Florida Panthers,2023-01-23,0.53,4,3.47
+108,New Jersey Devils,5,1,Washington Capitals,2022-11-26,0.54,4,3.46
+109,Vancouver Canucks,1,5,Florida Panthers,2022-12-01,-0.54,-4,3.46
+110,Detroit Red Wings,3,0,New York Islanders,2022-11-05,-0.45,3,3.45
+111,Washington Capitals,5,2,Toronto Maple Leafs,2022-12-17,-0.45,3,3.45
+112,New York Islanders,3,0,New York Rangers,2022-10-26,-0.44,3,3.44
+113,Ottawa Senators,5,2,Washington Capitals,2022-10-20,-0.44,3,3.44
+114,Seattle Kraken,2,5,Calgary Flames,2023-01-27,0.43,-3,3.43
+115,Vegas Golden Knights,0,4,Dallas Stars,2023-01-16,-0.58,-4,3.42
+116,St. Louis Blues,5,2,Nashville Predators,2023-01-19,-0.42,3,3.42
+117,Arizona Coyotes,4,3,Boston Bruins,2022-12-09,-2.42,1,3.42
+118,Colorado Avalanche,4,1,Dallas Stars,2022-11-26,-0.38,3,3.38
+119,Winnipeg Jets,5,1,Ottawa Senators,2022-12-20,0.62,4,3.38
+120,Ottawa Senators,1,5,Winnipeg Jets,2023-01-21,-0.62,-4,3.38
+121,Vancouver Canucks,2,6,New York Islanders,2023-01-03,-0.63,-4,3.37
+122,New Jersey Devils,3,5,St. Louis Blues,2023-01-05,1.37,-2,3.37
+123,Vancouver Canucks,4,1,Los Angeles Kings,2022-11-18,-0.37,3,3.37
+124,Buffalo Sabres,1,4,Florida Panthers,2023-01-16,0.37,-3,3.37
+125,Arizona Coyotes,2,7,Dallas Stars,2022-11-03,-1.64,-5,3.36
+126,Chicago Blackhawks,2,7,Winnipeg Jets,2022-11-27,-1.64,-5,3.36
+127,Columbus Blue Jackets,4,9,Buffalo Sabres,2022-12-07,-1.64,-5,3.36
+128,Seattle Kraken,5,1,Nashville Predators,2022-11-08,0.64,4,3.36
+129,Columbus Blue Jackets,3,1,Calgary Flames,2022-12-09,-1.35,2,3.35
+130,San Jose Sharks,2,5,Chicago Blackhawks,2022-10-15,0.34,-3,3.34
+131,Ottawa Senators,4,8,Seattle Kraken,2023-01-07,-0.66,-4,3.34
+132,New York Islanders,3,0,Edmonton Oilers,2022-11-23,-0.34,3,3.34
+133,Seattle Kraken,2,5,Vegas Golden Knights,2022-10-15,0.33,-3,3.33
+134,Carolina Hurricanes,4,0,Florida Panthers,2022-12-30,0.68,4,3.32
+135,Dallas Stars,3,6,Edmonton Oilers,2022-12-21,0.32,-3,3.32
+136,Colorado Avalanche,4,1,Carolina Hurricanes,2022-11-12,-0.31,3,3.31
+137,Anaheim Ducks,4,3,Toronto Maple Leafs,2022-10-30,-2.29,1,3.29
+138,Vegas Golden Knights,5,2,Winnipeg Jets,2022-10-20,-0.29,3,3.29
+139,Florida Panthers,5,2,Washington Capitals,2022-11-15,-0.28,3,3.28
+140,Winnipeg Jets,1,4,Minnesota Wild,2022-12-27,0.28,-3,3.28
+141,Columbus Blue Jackets,5,3,Florida Panthers,2022-11-20,-1.28,2,3.28
+142,Ottawa Senators,6,2,Arizona Coyotes,2022-10-22,0.74,4,3.26
+143,Dallas Stars,5,1,Florida Panthers,2023-01-08,0.75,4,3.25
+144,Anaheim Ducks,4,3,Carolina Hurricanes,2022-12-06,-2.23,1,3.23
+145,Winnipeg Jets,0,3,Pittsburgh Penguins,2022-11-19,0.23,-3,3.23
+146,Washington Capitals,4,1,Seattle Kraken,2022-12-09,-0.23,3,3.23
+147,Dallas Stars,3,6,New York Rangers,2022-10-29,0.22,-3,3.22
+148,Detroit Red Wings,3,0,Nashville Predators,2022-11-23,-0.22,3,3.22
+149,New York Islanders,1,4,Nashville Predators,2022-12-02,0.22,-3,3.22
+150,Calgary Flames,1,4,Nashville Predators,2022-11-03,0.21,-3,3.21
+151,Pittsburgh Penguins,6,2,St. Louis Blues,2022-12-03,0.79,4,3.21
+152,Buffalo Sabres,4,7,Vegas Golden Knights,2022-11-10,0.20,-3,3.20
+153,Calgary Flames,5,2,Washington Capitals,2022-12-03,-0.20,3,3.20
+154,Winnipeg Jets,2,5,Washington Capitals,2022-12-11,0.18,-3,3.18
+155,Vancouver Canucks,1,5,Washington Capitals,2022-11-29,-0.82,-4,3.18
+156,Chicago Blackhawks,4,2,Florida Panthers,2022-10-25,-1.18,2,3.18
+157,Washington Capitals,4,1,Winnipeg Jets,2022-12-23,-0.18,3,3.18
+158,Calgary Flames,4,1,Pittsburgh Penguins,2022-10-25,-0.16,3,3.16
+159,Columbus Blue Jackets,5,3,Nashville Predators,2022-10-20,-1.14,2,3.14
+160,Carolina Hurricanes,4,1,New Jersey Devils,2022-12-20,-0.14,3,3.14
+161,Dallas Stars,5,1,Nashville Predators,2022-10-15,0.88,4,3.12
+162,Columbus Blue Jackets,4,1,Chicago Blackhawks,2022-12-31,-0.10,3,3.10
+163,San Jose Sharks,3,7,Calgary Flames,2022-12-20,-0.91,-4,3.09
+164,Vancouver Canucks,1,5,Buffalo Sabres,2022-10-22,-0.91,-4,3.09
+165,Vegas Golden Knights,2,5,New York Islanders,2022-12-17,0.09,-3,3.09
+166,Los Angeles Kings,0,4,Dallas Stars,2023-01-19,-0.92,-4,3.08
+167,Buffalo Sabres,6,2,St. Louis Blues,2022-11-23,0.92,4,3.08
+168,Edmonton Oilers,5,2,Seattle Kraken,2023-01-17,-0.08,3,3.08
+169,Anaheim Ducks,3,2,New York Rangers,2022-11-23,-2.08,1,3.08
+170,Pittsburgh Penguins,4,6,San Jose Sharks,2023-01-28,1.07,-2,3.07
+171,New Jersey Devils,1,4,Dallas Stars,2022-12-13,0.07,-3,3.07
+172,Anaheim Ducks,5,4,Seattle Kraken,2022-10-12,-2.06,1,3.06
+173,Vegas Golden Knights,5,2,Pittsburgh Penguins,2023-01-05,-0.06,3,3.06
+174,Winnipeg Jets,4,1,New York Rangers,2022-10-14,-0.06,3,3.06
+175,Washington Capitals,1,4,Pittsburgh Penguins,2022-11-09,0.05,-3,3.05
+176,Tampa Bay Lightning,2,4,Detroit Red Wings,2022-12-06,1.03,-2,3.03
+177,Ottawa Senators,1,5,New Jersey Devils,2022-11-19,-0.97,-4,3.03
+178,Ottawa Senators,2,5,Los Angeles Kings,2022-12-06,0.01,-3,3.01
+179,Calgary Flames,4,1,New York Islanders,2023-01-06,-0.01,3,3.01
+180,Vancouver Canucks,1,5,Winnipeg Jets,2022-12-17,-1.00,-4,3.00
+181,St. Louis Blues,6,2,Anaheim Ducks,2022-11-19,1.00,4,3.00
+182,Ottawa Senators,0,3,Nashville Predators,2023-01-09,-0.02,-3,2.98
+183,Winnipeg Jets,4,0,St. Louis Blues,2022-10-24,1.02,4,2.98
+184,New York Islanders,0,2,Arizona Coyotes,2022-11-10,0.98,-2,2.98
+185,Edmonton Oilers,3,4,Anaheim Ducks,2022-12-17,1.98,-1,2.98
+186,Edmonton Oilers,0,2,St. Louis Blues,2022-10-22,0.98,-2,2.98
+187,Columbus Blue Jackets,4,3,Carolina Hurricanes,2023-01-07,-1.95,1,2.95
+188,Nashville Predators,6,4,New Jersey Devils,2023-01-26,-0.95,2,2.95
+189,Toronto Maple Leafs,4,1,Tampa Bay Lightning,2022-12-20,0.06,3,2.94
+190,Anaheim Ducks,1,7,Boston Bruins,2023-01-08,-3.07,-6,2.93
+191,Montréal Canadiens,2,6,Florida Panthers,2023-01-19,-1.07,-4,2.93
+192,Edmonton Oilers,2,5,Seattle Kraken,2023-01-03,-0.08,-3,2.92
+193,Ottawa Senators,4,2,Dallas Stars,2022-10-24,-0.90,2,2.90
+194,Chicago Blackhawks,5,2,Columbus Blue Jackets,2022-12-23,0.10,3,2.90
+195,Arizona Coyotes,3,1,Florida Panthers,2022-11-01,-0.90,2,2.90
+196,Philadelphia Flyers,2,6,Toronto Maple Leafs,2023-01-08,-1.10,-4,2.90
+197,Vancouver Canucks,4,2,Colorado Avalanche,2023-01-05,-0.90,2,2.90
+198,Los Angeles Kings,4,2,Toronto Maple Leafs,2022-10-29,-0.90,2,2.90
+199,Philadelphia Flyers,1,5,Dallas Stars,2022-11-13,-1.11,-4,2.89
+200,Ottawa Senators,4,0,Columbus Blue Jackets,2023-01-03,1.12,4,2.88
+201,Pittsburgh Penguins,6,2,Arizona Coyotes,2022-10-13,1.13,4,2.87
+202,Buffalo Sabres,6,3,Pittsburgh Penguins,2022-11-02,0.13,3,2.87
+203,Boston Bruins,5,1,Colorado Avalanche,2022-12-03,1.16,4,2.84
+204,Seattle Kraken,1,4,Tampa Bay Lightning,2023-01-16,-0.16,-3,2.84
+205,Colorado Avalanche,0,4,Boston Bruins,2022-12-07,-1.16,-4,2.84
+206,Los Angeles Kings,4,2,Tampa Bay Lightning,2022-10-25,-0.84,2,2.84
+207,Minnesota Wild,3,6,Colorado Avalanche,2022-10-17,-0.18,-3,2.82
+208,Arizona Coyotes,0,4,Washington Capitals,2023-01-19,-1.18,-4,2.82
+209,Detroit Red Wings,7,5,Winnipeg Jets,2023-01-10,-0.82,2,2.82
+210,Detroit Red Wings,2,6,New Jersey Devils,2022-10-25,-1.18,-4,2.82
+211,Detroit Red Wings,1,5,New Jersey Devils,2023-01-04,-1.18,-4,2.82
+212,New Jersey Devils,2,4,Florida Panthers,2022-12-17,0.82,-2,2.82
+213,Detroit Red Wings,5,1,Anaheim Ducks,2022-10-23,1.19,4,2.81
+214,Carolina Hurricanes,3,5,Nashville Predators,2023-01-05,0.81,-2,2.81
+215,Montréal Canadiens,3,2,Toronto Maple Leafs,2023-01-21,-1.80,1,2.80
+216,Montréal Canadiens,4,3,Toronto Maple Leafs,2022-10-12,-1.80,1,2.80
+217,Washington Capitals,3,0,Calgary Flames,2022-11-25,0.20,3,2.80
+218,Edmonton Oilers,6,3,Pittsburgh Penguins,2022-10-24,0.20,3,2.80
+219,Detroit Red Wings,3,6,Ottawa Senators,2022-12-17,-0.21,-3,2.79
+220,Philadelphia Flyers,1,4,Ottawa Senators,2022-11-12,-0.21,-3,2.79
+221,Pittsburgh Penguins,1,4,Winnipeg Jets,2023-01-13,-0.23,-3,2.77
+222,Edmonton Oilers,5,2,Minnesota Wild,2022-12-09,0.24,3,2.76
+223,Philadelphia Flyers,5,3,Colorado Avalanche,2022-12-05,-0.73,2,2.73
+224,New Jersey Devils,4,6,New York Islanders,2022-12-09,0.73,-2,2.73
+225,Toronto Maple Leafs,4,1,Winnipeg Jets,2023-01-19,0.27,3,2.73
+226,Winnipeg Jets,1,4,Toronto Maple Leafs,2022-10-22,-0.27,-3,2.73
+227,Florida Panthers,4,0,Columbus Blue Jackets,2022-12-13,1.28,4,2.72
+228,Anaheim Ducks,3,2,Vegas Golden Knights,2022-12-28,-1.72,1,2.72
+229,Dallas Stars,4,1,Winnipeg Jets,2022-10-17,0.28,3,2.72
+230,Calgary Flames,3,6,Buffalo Sabres,2022-10-20,-0.29,-3,2.71
+231,Calgary Flames,1,4,Colorado Avalanche,2023-01-18,-0.29,-3,2.71
+232,Dallas Stars,5,0,Anaheim Ducks,2022-12-01,2.30,5,2.70
+233,Edmonton Oilers,2,3,Columbus Blue Jackets,2023-01-25,1.70,-1,2.70
+234,Boston Bruins,2,3,Los Angeles Kings,2022-12-15,1.69,-1,2.69
+235,Chicago Blackhawks,5,4,Seattle Kraken,2022-10-23,-1.68,1,2.68
+236,Ottawa Senators,3,2,Boston Bruins,2022-12-27,-1.68,1,2.68
+237,Vegas Golden Knights,4,1,Ottawa Senators,2022-11-23,0.33,3,2.67
+238,Chicago Blackhawks,2,5,San Jose Sharks,2023-01-01,-0.34,-3,2.66
+239,Washington Capitals,1,3,Philadelphia Flyers,2023-01-14,0.65,-2,2.65
+240,Philadelphia Flyers,5,3,Washington Capitals,2023-01-11,-0.65,2,2.65
+241,Detroit Red Wings,3,1,Washington Capitals,2022-11-03,-0.64,2,2.64
+242,New York Rangers,4,1,Vegas Golden Knights,2023-01-27,0.36,3,2.64
+243,Toronto Maple Leafs,5,2,Buffalo Sabres,2022-11-19,0.37,3,2.63
+244,Columbus Blue Jackets,3,6,Arizona Coyotes,2022-10-25,-0.38,-3,2.62
+245,St. Louis Blues,3,5,Chicago Blackhawks,2023-01-21,0.62,-2,2.62
+246,Tampa Bay Lightning,6,3,Washington Capitals,2022-11-13,0.39,3,2.61
+247,New Jersey Devils,5,2,Edmonton Oilers,2022-11-21,0.39,3,2.61
+248,Pittsburgh Penguins,4,1,Ottawa Senators,2023-01-20,0.39,3,2.61
+249,Anaheim Ducks,1,5,Ottawa Senators,2022-11-25,-1.40,-4,2.60
+250,New York Rangers,1,2,Montréal Canadiens,2023-01-15,1.60,-1,2.60
+251,Edmonton Oilers,1,3,Los Angeles Kings,2022-11-16,0.60,-2,2.60
+252,Dallas Stars,4,5,San Jose Sharks,2022-11-11,1.58,-1,2.58
+253,Nashville Predators,0,3,Washington Capitals,2022-10-29,-0.42,-3,2.58
+254,Seattle Kraken,4,1,New York Islanders,2023-01-01,0.42,3,2.58
+255,San Jose Sharks,4,3,Toronto Maple Leafs,2022-10-27,-1.57,1,2.57
+256,Vegas Golden Knights,3,1,Toronto Maple Leafs,2022-10-24,-0.56,2,2.56
+257,Philadelphia Flyers,2,5,Calgary Flames,2022-11-21,-0.44,-3,2.56
+258,New York Islanders,5,2,Philadelphia Flyers,2022-11-26,0.45,3,2.55
+259,Chicago Blackhawks,4,3,Buffalo Sabres,2023-01-17,-1.54,1,2.54
+260,Chicago Blackhawks,3,7,Washington Capitals,2022-12-13,-1.46,-4,2.54
+261,Winnipeg Jets,5,2,Florida Panthers,2022-12-06,0.46,3,2.54
+262,Chicago Blackhawks,3,2,Colorado Avalanche,2023-01-12,-1.54,1,2.54
+263,San Jose Sharks,4,7,Detroit Red Wings,2022-11-17,-0.47,-3,2.53
+264,Florida Panthers,4,3,Boston Bruins,2023-01-28,-1.52,1,2.52
+265,Ottawa Senators,3,1,Buffalo Sabres,2023-01-01,-0.52,2,2.52
+266,Carolina Hurricanes,5,2,Minnesota Wild,2023-01-19,0.49,3,2.51
+267,Pittsburgh Penguins,1,4,Toronto Maple Leafs,2022-11-26,-0.50,-3,2.50
+268,Toronto Maple Leafs,2,4,Pittsburgh Penguins,2022-11-11,0.50,-2,2.50
+269,Pittsburgh Penguins,2,5,Toronto Maple Leafs,2022-11-15,-0.50,-3,2.50
+270,Florida Panthers,2,5,Seattle Kraken,2022-12-11,-0.51,-3,2.49
+271,Buffalo Sabres,4,1,Ottawa Senators,2022-10-13,0.52,3,2.48
+272,Boston Bruins,7,3,Florida Panthers,2022-12-19,1.52,4,2.48
+273,Detroit Red Wings,1,4,Vegas Golden Knights,2022-12-03,-0.53,-3,2.47
+274,Philadelphia Flyers,3,1,New York Islanders,2022-11-29,-0.45,2,2.45
+275,Minnesota Wild,4,1,Detroit Red Wings,2022-12-14,0.55,3,2.45
+276,Edmonton Oilers,7,4,Nashville Predators,2022-11-01,0.56,3,2.44
+277,Minnesota Wild,1,4,Dallas Stars,2022-12-29,-0.56,-3,2.44
+278,Columbus Blue Jackets,5,3,San Jose Sharks,2023-01-21,-0.44,2,2.44
+279,Nashville Predators,3,6,Edmonton Oilers,2022-12-13,-0.56,-3,2.44
+280,Columbus Blue Jackets,2,6,Washington Capitals,2023-01-05,-1.56,-4,2.44
+281,Montréal Canadiens,0,4,Seattle Kraken,2023-01-09,-1.57,-4,2.43
+282,Buffalo Sabres,2,3,Montréal Canadiens,2022-10-27,1.43,-1,2.43
+283,New York Islanders,0,3,Carolina Hurricanes,2022-12-10,-0.59,-3,2.41
+284,New York Islanders,2,5,Carolina Hurricanes,2023-01-21,-0.59,-3,2.41
+285,Tampa Bay Lightning,4,1,Calgary Flames,2022-11-17,0.59,3,2.41
+286,Philadelphia Flyers,1,4,Pittsburgh Penguins,2022-11-25,-0.60,-3,2.40
+287,Edmonton Oilers,7,3,Chicago Blackhawks,2023-01-28,1.60,4,2.40
+288,Ottawa Senators,4,6,Vancouver Canucks,2022-11-08,0.38,-2,2.38
+289,Chicago Blackhawks,2,5,St. Louis Blues,2022-11-16,-0.62,-3,2.38
+290,St. Louis Blues,1,4,Calgary Flames,2023-01-12,-0.63,-3,2.37
+291,Dallas Stars,4,0,Arizona Coyotes,2023-01-21,1.64,4,2.36
+292,Vancouver Canucks,5,2,Chicago Blackhawks,2023-01-24,0.64,3,2.36
+293,Winnipeg Jets,4,0,Chicago Blackhawks,2022-11-05,1.64,4,2.36
+294,New York Rangers,2,3,San Jose Sharks,2022-10-20,1.36,-1,2.36
+295,Columbus Blue Jackets,1,5,Colorado Avalanche,2022-11-05,-1.64,-4,2.36
+296,St. Louis Blues,2,5,New York Islanders,2022-11-03,-0.64,-3,2.36
+297,Philadelphia Flyers,1,4,Washington Capitals,2022-12-07,-0.65,-3,2.35
+298,Boston Bruins,3,4,Vegas Golden Knights,2022-12-05,1.35,-1,2.35
+299,Toronto Maple Leafs,5,2,New York Islanders,2023-01-23,0.65,3,2.35
+300,Dallas Stars,5,2,New York Islanders,2022-11-19,0.66,3,2.34
+301,San Jose Sharks,2,5,Los Angeles Kings,2022-11-25,-0.66,-3,2.34
+302,Los Angeles Kings,4,2,Vegas Golden Knights,2022-12-27,-0.34,2,2.34
+303,Tampa Bay Lightning,4,1,Florida Panthers,2022-12-10,0.67,3,2.33
+304,Los Angeles Kings,1,4,Seattle Kraken,2022-10-13,-0.67,-3,2.33
+305,Ottawa Senators,5,2,San Jose Sharks,2022-12-03,0.68,3,2.32
+306,Nashville Predators,4,1,San Jose Sharks,2022-10-07,0.70,3,2.30
+307,Montréal Canadiens,3,2,Pittsburgh Penguins,2022-10-17,-1.30,1,2.30
+308,Boston Bruins,6,1,Chicago Blackhawks,2022-11-19,2.70,5,2.30
+309,Montréal Canadiens,5,4,Pittsburgh Penguins,2022-11-12,-1.30,1,2.30
+310,Calgary Flames,5,3,Colorado Avalanche,2022-10-13,-0.29,2,2.29
+311,Toronto Maple Leafs,5,6,St. Louis Blues,2023-01-03,1.29,-1,2.29
+312,Detroit Red Wings,3,0,Montréal Canadiens,2022-10-14,0.71,3,2.29
+313,Vancouver Canucks,0,3,Minnesota Wild,2022-12-10,-0.72,-3,2.28
+314,St. Louis Blues,5,2,Columbus Blue Jackets,2022-10-15,0.72,3,2.28
+315,Vegas Golden Knights,4,0,Anaheim Ducks,2022-10-28,1.72,4,2.28
+316,Columbus Blue Jackets,3,5,Anaheim Ducks,2023-01-19,0.28,-2,2.28
+317,Chicago Blackhawks,2,0,Arizona Coyotes,2023-01-06,-0.28,2,2.28
+318,New York Islanders,1,4,New Jersey Devils,2022-10-20,-0.73,-3,2.27
+319,Buffalo Sabres,6,3,Detroit Red Wings,2022-12-29,0.73,3,2.27
+320,Colorado Avalanche,6,3,Detroit Red Wings,2023-01-16,0.73,3,2.27
+321,St. Louis Blues,2,5,Minnesota Wild,2022-12-31,-0.74,-3,2.26
+322,Vancouver Canucks,5,2,Columbus Blue Jackets,2023-01-27,0.74,3,2.26
+323,Montréal Canadiens,1,5,Tampa Bay Lightning,2022-12-17,-1.74,-4,2.26
+324,Chicago Blackhawks,4,3,Calgary Flames,2023-01-08,-1.25,1,2.25
+325,Edmonton Oilers,6,4,Carolina Hurricanes,2022-10-20,-0.25,2,2.25
+326,Edmonton Oilers,5,3,Tampa Bay Lightning,2023-01-19,-0.24,2,2.24
+327,Minnesota Wild,5,3,Edmonton Oilers,2022-12-01,-0.24,2,2.24
+328,Nashville Predators,1,3,Philadelphia Flyers,2022-10-22,0.23,-2,2.23
+329,Carolina Hurricanes,3,4,Vancouver Canucks,2023-01-15,1.22,-1,2.22
+330,Columbus Blue Jackets,6,4,Montréal Canadiens,2022-11-17,-0.21,2,2.21
+331,Winnipeg Jets,4,2,Tampa Bay Lightning,2023-01-06,-0.21,2,2.21
+332,Detroit Red Wings,4,2,Ottawa Senators,2022-12-31,-0.21,2,2.21
+333,New York Rangers,3,1,Toronto Maple Leafs,2022-12-15,-0.21,2,2.21
+334,Los Angeles Kings,2,4,Philadelphia Flyers,2022-12-31,0.20,-2,2.20
+335,Anaheim Ducks,3,2,Detroit Red Wings,2022-11-15,-1.19,1,2.19
+336,Tampa Bay Lightning,5,2,Nashville Predators,2022-12-08,0.81,3,2.19
+337,New Jersey Devils,1,2,Philadelphia Flyers,2022-12-15,1.18,-1,2.18
+338,Florida Panthers,5,3,Minnesota Wild,2023-01-21,-0.18,2,2.18
+339,Washington Capitals,2,3,Arizona Coyotes,2022-11-05,1.18,-1,2.18
+340,Tampa Bay Lightning,5,2,Los Angeles Kings,2023-01-28,0.84,3,2.16
+341,Calgary Flames,1,2,Montréal Canadiens,2022-12-01,1.15,-1,2.15
+342,New York Rangers,5,3,Carolina Hurricanes,2023-01-03,-0.15,2,2.15
+343,Montréal Canadiens,2,1,Calgary Flames,2022-12-12,-1.15,1,2.15
+344,Boston Bruins,3,4,Buffalo Sabres,2022-12-31,1.15,-1,2.15
+345,New York Rangers,3,1,Tampa Bay Lightning,2022-10-11,-0.14,2,2.14
+346,Pittsburgh Penguins,3,1,Buffalo Sabres,2022-12-10,-0.13,2,2.13
+347,Nashville Predators,1,4,Dallas Stars,2022-10-13,-0.88,-3,2.12
+348,Boston Bruins,5,1,Detroit Red Wings,2022-10-27,1.88,4,2.12
+349,Montréal Canadiens,1,5,New Jersey Devils,2022-11-15,-1.89,-4,2.11
+350,Calgary Flames,5,3,Minnesota Wild,2022-12-07,-0.11,2,2.11
+351,Philadelphia Flyers,3,6,New York Rangers,2022-12-17,-0.89,-3,2.11
+352,Columbus Blue Jackets,6,5,Los Angeles Kings,2022-12-11,-1.11,1,2.11
+353,Vancouver Canucks,1,4,Colorado Avalanche,2023-01-20,-0.90,-3,2.10
+354,Washington Capitals,2,4,Minnesota Wild,2023-01-17,0.10,-2,2.10
+355,New York Islanders,1,3,Florida Panthers,2022-10-13,0.09,-2,2.09
+356,San Jose Sharks,2,5,Calgary Flames,2022-12-18,-0.91,-3,2.09
+357,Dallas Stars,5,2,Los Angeles Kings,2022-11-01,0.92,3,2.08
+358,New York Islanders,5,2,San Jose Sharks,2022-10-18,0.92,3,2.08
+359,Nashville Predators,6,3,Montréal Canadiens,2023-01-03,0.93,3,2.07
+360,Boston Bruins,2,1,Anaheim Ducks,2022-10-20,3.07,1,2.07
+361,Edmonton Oilers,2,4,Buffalo Sabres,2022-10-18,0.06,-2,2.06
+362,Seattle Kraken,3,4,St. Louis Blues,2022-10-19,1.06,-1,2.06
+363,Seattle Kraken,4,5,Vancouver Canucks,2022-10-27,1.05,-1,2.05
+364,Columbus Blue Jackets,2,6,Carolina Hurricanes,2023-01-12,-1.95,-4,2.05
+365,Vancouver Canucks,6,5,Seattle Kraken,2022-12-22,-1.05,1,2.05
+366,Tampa Bay Lightning,2,3,Philadelphia Flyers,2022-10-18,1.04,-1,2.04
+367,Anaheim Ducks,2,6,Edmonton Oilers,2023-01-11,-1.98,-4,2.02
+368,Minnesota Wild,2,3,San Jose Sharks,2022-11-13,1.02,-1,2.02
+369,Los Angeles Kings,2,5,New Jersey Devils,2023-01-14,-0.99,-3,2.01
+370,Chicago Blackhawks,2,1,Los Angeles Kings,2022-11-03,-1.01,1,2.01
+371,New York Rangers,2,5,Boston Bruins,2022-11-03,-0.99,-3,2.01
+372,Colorado Avalanche,2,4,Buffalo Sabres,2022-12-15,-0.00,-2,2.00
+373,Winnipeg Jets,7,4,Vancouver Canucks,2023-01-08,1.00,3,2.00
+374,Buffalo Sabres,4,6,Colorado Avalanche,2022-12-01,0.00,-2,2.00
+375,Vancouver Canucks,8,5,Anaheim Ducks,2022-11-03,1.01,3,1.99
+376,St. Louis Blues,2,5,Winnipeg Jets,2022-12-08,-1.02,-3,1.98
+377,Arizona Coyotes,5,4,New York Islanders,2022-12-16,-0.98,1,1.98
+378,Edmonton Oilers,3,4,St. Louis Blues,2022-12-15,0.98,-1,1.98
+379,Nashville Predators,5,3,Los Angeles Kings,2023-01-21,0.03,2,1.97
+380,Philadelphia Flyers,1,4,Tampa Bay Lightning,2022-12-01,-1.04,-3,1.96
+381,Minnesota Wild,4,6,Pittsburgh Penguins,2022-11-17,-0.05,-2,1.95
+382,New Jersey Devils,3,4,Nashville Predators,2022-12-01,0.95,-1,1.95
+383,Arizona Coyotes,2,4,San Jose Sharks,2023-01-10,-0.06,-2,1.94
+384,Seattle Kraken,5,2,St. Louis Blues,2022-12-20,1.06,3,1.94
+385,Carolina Hurricanes,1,3,Toronto Maple Leafs,2022-11-06,-0.06,-2,1.94
+386,Vegas Golden Knights,4,1,Arizona Coyotes,2022-11-17,1.07,3,1.93
+387,Montréal Canadiens,4,3,Nashville Predators,2023-01-12,-0.93,1,1.93
+388,Vegas Golden Knights,5,2,Arizona Coyotes,2022-12-21,1.07,3,1.93
+389,Detroit Red Wings,3,4,Columbus Blue Jackets,2023-01-14,0.92,-1,1.92
+390,Los Angeles Kings,3,2,Dallas Stars,2023-01-03,-0.92,1,1.92
+391,Colorado Avalanche,2,3,St. Louis Blues,2022-11-14,0.92,-1,1.92
+392,Buffalo Sabres,4,5,Vancouver Canucks,2022-11-15,0.91,-1,1.91
+393,Columbus Blue Jackets,5,4,Philadelphia Flyers,2022-11-15,-0.91,1,1.91
+394,Toronto Maple Leafs,4,1,Detroit Red Wings,2023-01-07,1.09,3,1.91
+395,Toronto Maple Leafs,5,2,Philadelphia Flyers,2022-11-02,1.10,3,1.90
+396,Buffalo Sabres,2,4,Winnipeg Jets,2023-01-12,-0.10,-2,1.90
+397,New York Islanders,1,3,Minnesota Wild,2023-01-12,-0.10,-2,1.90
+398,Colorado Avalanche,3,4,Vancouver Canucks,2022-11-23,0.90,-1,1.90
+399,New York Rangers,2,3,Detroit Red Wings,2022-11-06,0.89,-1,1.89
+400,Arizona Coyotes,1,4,Pittsburgh Penguins,2023-01-08,-1.13,-3,1.87
+401,Carolina Hurricanes,3,5,New Jersey Devils,2023-01-10,-0.14,-2,1.86
+402,Tampa Bay Lightning,3,2,Boston Bruins,2023-01-26,-0.85,1,1.85
+403,Florida Panthers,5,3,Ottawa Senators,2022-10-29,0.16,2,1.84
+404,St. Louis Blues,5,4,Washington Capitals,2022-11-17,-0.83,1,1.83
+405,Vegas Golden Knights,4,2,Florida Panthers,2023-01-12,0.17,2,1.83
+406,Chicago Blackhawks,4,3,Detroit Red Wings,2022-10-21,-0.81,1,1.81
+407,Philadelphia Flyers,5,2,Anaheim Ducks,2023-01-17,1.19,3,1.81
+408,Anaheim Ducks,1,4,Philadelphia Flyers,2023-01-02,-1.19,-3,1.81
+409,Buffalo Sabres,6,3,San Jose Sharks,2022-12-04,1.20,3,1.80
+410,Toronto Maple Leafs,2,1,Boston Bruins,2022-11-05,-0.79,1,1.79
+411,Columbus Blue Jackets,1,3,Montréal Canadiens,2022-11-23,-0.21,-2,1.79
+412,Vancouver Canucks,2,5,Tampa Bay Lightning,2023-01-18,-1.21,-3,1.79
+413,Tampa Bay Lightning,5,2,St. Louis Blues,2022-11-25,1.22,3,1.78
+414,Florida Panthers,2,4,Pittsburgh Penguins,2022-12-15,-0.23,-2,1.77
+415,Washington Capitals,2,5,Boston Bruins,2022-10-12,-1.24,-3,1.76
+416,Ottawa Senators,2,4,New York Islanders,2022-11-14,-0.24,-2,1.76
+417,Minnesota Wild,4,1,Montréal Canadiens,2022-11-01,1.25,3,1.75
+418,Columbus Blue Jackets,4,3,Vancouver Canucks,2022-10-18,-0.74,1,1.74
+419,New York Islanders,3,0,Chicago Blackhawks,2022-12-04,1.26,3,1.74
+420,Arizona Coyotes,2,5,Buffalo Sabres,2022-12-17,-1.26,-3,1.74
+421,Arizona Coyotes,2,1,Los Angeles Kings,2022-12-23,-0.73,1,1.73
+422,Seattle Kraken,3,1,Pittsburgh Penguins,2022-10-29,0.27,2,1.73
+423,Anaheim Ducks,5,4,San Jose Sharks,2023-01-06,-0.72,1,1.72
+424,Vegas Golden Knights,2,3,St. Louis Blues,2022-11-12,0.72,-1,1.72
+425,San Jose Sharks,4,5,Anaheim Ducks,2022-11-05,0.72,-1,1.72
+426,St. Louis Blues,5,3,San Jose Sharks,2022-11-10,0.28,2,1.72
+427,San Jose Sharks,5,6,Anaheim Ducks,2022-11-01,0.72,-1,1.72
+428,Detroit Red Wings,2,3,Montréal Canadiens,2022-11-08,0.71,-1,1.71
+429,New York Rangers,3,5,New Jersey Devils,2022-11-28,-0.29,-2,1.71
+430,Montréal Canadiens,5,4,Philadelphia Flyers,2022-11-19,-0.70,1,1.70
+431,Tampa Bay Lightning,5,3,Buffalo Sabres,2022-11-05,0.30,2,1.70
+432,St. Louis Blues,1,4,Dallas Stars,2022-11-28,-1.30,-3,1.70
+433,Carolina Hurricanes,5,3,Buffalo Sabres,2022-11-04,0.31,2,1.69
+434,New York Rangers,2,3,Ottawa Senators,2022-12-02,0.68,-1,1.68
+435,Dallas Stars,5,6,Calgary Flames,2023-01-14,0.67,-1,1.67
+436,Vegas Golden Knights,2,4,Seattle Kraken,2022-11-25,-0.33,-2,1.67
+437,Anaheim Ducks,2,1,Arizona Coyotes,2023-01-28,-0.66,1,1.66
+438,Minnesota Wild,4,2,Ottawa Senators,2022-12-18,0.34,2,1.66
+439,Edmonton Oilers,4,2,New York Islanders,2023-01-05,0.34,2,1.66
+440,Nashville Predators,2,1,New York Rangers,2022-11-12,-0.66,1,1.66
+441,Ottawa Senators,2,4,Minnesota Wild,2022-10-27,-0.34,-2,1.66
+442,Seattle Kraken,8,5,San Jose Sharks,2022-11-23,1.34,3,1.66
+443,Boston Bruins,4,0,San Jose Sharks,2023-01-22,2.35,4,1.65
+444,Toronto Maple Leafs,2,3,New York Islanders,2022-11-21,0.65,-1,1.65
+445,Chicago Blackhawks,1,4,Vegas Golden Knights,2022-12-15,-1.35,-3,1.65
+446,Minnesota Wild,4,1,Chicago Blackhawks,2022-12-16,1.36,3,1.64
+447,Vancouver Canucks,2,5,New Jersey Devils,2022-11-01,-1.36,-3,1.64
+448,Anaheim Ducks,2,6,New Jersey Devils,2023-01-13,-2.37,-4,1.63
+449,St. Louis Blues,4,3,Calgary Flames,2023-01-10,-0.63,1,1.63
+450,Los Angeles Kings,4,1,Anaheim Ducks,2022-12-20,1.38,3,1.62
+451,Calgary Flames,3,4,Vancouver Canucks,2022-12-14,0.62,-1,1.62
+452,Calgary Flames,3,2,Carolina Hurricanes,2022-10-22,-0.60,1,1.60
+453,Ottawa Senators,3,0,Anaheim Ducks,2022-12-12,1.40,3,1.60
+454,Nashville Predators,2,1,Winnipeg Jets,2023-01-24,-0.60,1,1.60
+455,Pittsburgh Penguins,4,5,Detroit Red Wings,2022-12-28,0.59,-1,1.59
+456,New York Rangers,4,1,Arizona Coyotes,2022-11-13,1.42,3,1.58
+457,New York Islanders,1,4,Boston Bruins,2023-01-18,-1.43,-3,1.57
+458,Florida Panthers,2,4,Edmonton Oilers,2022-11-12,-0.43,-2,1.57
+459,New York Rangers,5,3,New York Islanders,2022-12-22,0.44,2,1.56
+460,Toronto Maple Leafs,3,4,Vegas Golden Knights,2022-11-08,0.56,-1,1.56
+461,Nashville Predators,4,3,Edmonton Oilers,2022-12-19,-0.56,1,1.56
+462,Dallas Stars,5,6,Minnesota Wild,2022-12-04,0.56,-1,1.56
+463,Florida Panthers,4,5,St. Louis Blues,2022-11-26,0.55,-1,1.55
+464,New York Islanders,2,0,Detroit Red Wings,2023-01-27,0.45,2,1.55
+465,Buffalo Sabres,1,3,New Jersey Devils,2022-11-25,-0.45,-2,1.55
+466,Detroit Red Wings,2,1,Minnesota Wild,2022-10-29,-0.55,1,1.55
+467,Arizona Coyotes,4,3,Detroit Red Wings,2023-01-17,-0.54,1,1.54
+468,Arizona Coyotes,5,4,Philadelphia Flyers,2022-12-11,-0.53,1,1.53
+469,Vegas Golden Knights,2,3,Detroit Red Wings,2023-01-19,0.53,-1,1.53
+470,Dallas Stars,2,0,Washington Capitals,2022-10-27,0.47,2,1.53
+471,Colorado Avalanche,4,5,Los Angeles Kings,2022-12-29,0.53,-1,1.53
+472,Montréal Canadiens,5,4,St. Louis Blues,2023-01-07,-0.52,1,1.52
+473,Pittsburgh Penguins,2,1,Dallas Stars,2022-12-12,-0.51,1,1.51
+474,Tampa Bay Lightning,4,2,Minnesota Wild,2023-01-24,0.49,2,1.51
+475,Colorado Avalanche,3,1,Nashville Predators,2022-12-17,0.50,2,1.50
+476,Nashville Predators,3,5,Buffalo Sabres,2023-01-14,-0.50,-2,1.50
+477,Colorado Avalanche,5,3,Nashville Predators,2022-11-10,0.50,2,1.50
+478,Minnesota Wild,2,1,Carolina Hurricanes,2022-11-19,-0.49,1,1.49
+479,Columbus Blue Jackets,3,6,Pittsburgh Penguins,2022-10-22,-1.51,-3,1.49
+480,Pittsburgh Penguins,4,1,Columbus Blue Jackets,2022-12-06,1.51,3,1.49
+481,Florida Panthers,3,5,New York Rangers,2023-01-01,-0.53,-2,1.47
+482,Colorado Avalanche,5,2,Chicago Blackhawks,2022-10-12,1.54,3,1.46
+483,Washington Capitals,3,4,Ottawa Senators,2022-12-29,0.44,-1,1.44
+484,New York Rangers,3,4,New York Islanders,2022-11-08,0.44,-1,1.44
+485,Seattle Kraken,2,3,Calgary Flames,2022-12-28,0.43,-1,1.43
+486,Dallas Stars,5,2,San Jose Sharks,2022-12-31,1.58,3,1.42
+487,Pittsburgh Penguins,2,4,New Jersey Devils,2022-12-30,-0.58,-2,1.42
+488,Washington Capitals,2,3,Nashville Predators,2023-01-06,0.42,-1,1.42
+489,Tampa Bay Lightning,5,3,New York Islanders,2022-10-22,0.58,2,1.42
+490,St. Louis Blues,1,0,Nashville Predators,2022-12-12,-0.42,1,1.42
+491,St. Louis Blues,2,1,Ottawa Senators,2023-01-16,-0.40,1,1.40
+492,Montréal Canadiens,1,4,New York Rangers,2023-01-05,-1.60,-3,1.40
+493,Ottawa Senators,5,4,Pittsburgh Penguins,2023-01-18,-0.39,1,1.39
+494,Calgary Flames,3,2,Winnipeg Jets,2022-11-12,-0.39,1,1.39
+495,Dallas Stars,2,3,Colorado Avalanche,2022-11-21,0.38,-1,1.38
+496,St. Louis Blues,3,1,Chicago Blackhawks,2022-12-29,0.62,2,1.38
+497,Dallas Stars,2,3,Buffalo Sabres,2023-01-23,0.38,-1,1.38
+498,Philadelphia Flyers,4,3,Florida Panthers,2022-10-27,-0.37,1,1.37
+499,Buffalo Sabres,3,4,Florida Panthers,2022-10-15,0.37,-1,1.37
+500,Los Angeles Kings,4,6,Winnipeg Jets,2022-10-27,-0.63,-2,1.37
+501,Colorado Avalanche,4,5,Florida Panthers,2023-01-10,0.36,-1,1.36
+502,Colorado Avalanche,6,3,Columbus Blue Jackets,2022-11-04,1.64,3,1.36
+503,Edmonton Oilers,3,4,Calgary Flames,2022-10-15,0.35,-1,1.35
+504,Los Angeles Kings,1,0,Minnesota Wild,2022-11-08,-0.35,1,1.35
+505,Minnesota Wild,6,7,Los Angeles Kings,2022-10-15,0.35,-1,1.35
+506,Chicago Blackhawks,5,8,Seattle Kraken,2023-01-14,-1.68,-3,1.32
+507,Nashville Predators,2,1,Minnesota Wild,2022-11-15,-0.32,1,1.32
+508,Ottawa Senators,1,3,New York Rangers,2022-11-30,-0.68,-2,1.32
+509,Seattle Kraken,0,1,Minnesota Wild,2022-11-11,0.32,-1,1.32
+510,Carolina Hurricanes,2,3,Colorado Avalanche,2022-11-17,0.31,-1,1.31
+511,Los Angeles Kings,2,5,Boston Bruins,2023-01-05,-1.69,-3,1.31
+512,Seattle Kraken,4,3,New Jersey Devils,2023-01-19,-0.31,1,1.31
+513,Los Angeles Kings,3,5,New York Rangers,2022-11-22,-0.70,-2,1.30
+514,New Jersey Devils,1,3,Boston Bruins,2022-12-28,-0.70,-2,1.30
+515,Pittsburgh Penguins,3,2,New York Rangers,2022-12-20,-0.29,1,1.29
+516,New York Rangers,4,3,New Jersey Devils,2022-12-12,-0.29,1,1.29
+517,Winnipeg Jets,5,6,Vegas Golden Knights,2022-12-13,0.29,-1,1.29
+518,Vegas Golden Knights,2,1,Winnipeg Jets,2022-10-30,-0.29,1,1.29
+519,New York Islanders,5,4,Colorado Avalanche,2022-10-29,-0.28,1,1.28
+520,Dallas Stars,4,5,Winnipeg Jets,2022-11-25,0.28,-1,1.28
+521,Los Angeles Kings,5,3,Arizona Coyotes,2022-12-01,0.73,2,1.27
+522,Arizona Coyotes,3,5,Ottawa Senators,2023-01-12,-0.74,-2,1.26
+523,Anaheim Ducks,1,4,Minnesota Wild,2022-11-09,-1.74,-3,1.26
+524,Tampa Bay Lightning,4,1,Montréal Canadiens,2022-12-28,1.74,3,1.26
+525,Anaheim Ducks,1,4,Minnesota Wild,2022-12-21,-1.74,-3,1.26
+526,Los Angeles Kings,4,3,Calgary Flames,2022-12-22,-0.25,1,1.25
+527,Florida Panthers,4,6,Dallas Stars,2022-11-17,-0.75,-2,1.25
+528,Ottawa Senators,2,1,New York Islanders,2023-01-25,-0.24,1,1.24
+529,Minnesota Wild,2,1,Edmonton Oilers,2022-12-12,-0.24,1,1.24
+530,Tampa Bay Lightning,2,3,Edmonton Oilers,2022-11-08,0.24,-1,1.24
+531,Boston Bruins,3,1,Dallas Stars,2022-10-25,0.77,2,1.23
+532,Nashville Predators,5,4,New York Islanders,2022-11-17,-0.22,1,1.22
+533,New York Rangers,2,1,Dallas Stars,2023-01-12,-0.22,1,1.22
+534,Nashville Predators,2,1,Calgary Flames,2023-01-16,-0.21,1,1.21
+535,Winnipeg Jets,4,3,Carolina Hurricanes,2022-11-21,-0.21,1,1.21
+536,Ottawa Senators,1,2,Philadelphia Flyers,2022-11-05,0.21,-1,1.21
+537,Columbus Blue Jackets,0,4,Boston Bruins,2022-10-28,-2.80,-4,1.20
+538,Colorado Avalanche,2,3,Vegas Golden Knights,2023-01-02,0.19,-1,1.19
+539,Minnesota Wild,3,2,Buffalo Sabres,2023-01-28,-0.18,1,1.18
+540,Washington Capitals,6,4,Vancouver Canucks,2022-10-17,0.82,2,1.18
+541,Florida Panthers,2,4,New Jersey Devils,2022-12-21,-0.82,-2,1.18
+542,Montréal Canadiens,2,5,Dallas Stars,2022-10-22,-1.82,-3,1.18
+543,Florida Panthers,3,4,Los Angeles Kings,2023-01-27,0.17,-1,1.17
+544,Los Angeles Kings,5,4,Florida Panthers,2022-11-05,-0.17,1,1.17
+545,Philadelphia Flyers,3,5,Winnipeg Jets,2023-01-22,-0.83,-2,1.17
+546,Arizona Coyotes,2,3,Montréal Canadiens,2022-12-19,0.17,-1,1.17
+547,New York Rangers,2,3,Colorado Avalanche,2022-10-25,0.16,-1,1.16
+548,Chicago Blackhawks,0,3,Carolina Hurricanes,2022-11-14,-1.85,-3,1.15
+549,Chicago Blackhawks,1,4,Tampa Bay Lightning,2023-01-03,-1.85,-3,1.15
+550,Boston Bruins,3,1,Tampa Bay Lightning,2022-11-29,0.85,2,1.15
+551,Carolina Hurricanes,3,0,Chicago Blackhawks,2022-12-27,1.85,3,1.15
+552,Edmonton Oilers,2,3,Washington Capitals,2022-12-05,0.15,-1,1.15
+553,Tampa Bay Lightning,3,5,Boston Bruins,2022-11-21,-0.85,-2,1.15
+554,Los Angeles Kings,2,4,Carolina Hurricanes,2022-12-03,-0.85,-2,1.15
+555,Washington Capitals,5,4,Edmonton Oilers,2022-11-07,-0.15,1,1.15
+556,New Jersey Devils,4,5,Carolina Hurricanes,2023-01-01,0.14,-1,1.14
+557,Seattle Kraken,1,2,Colorado Avalanche,2023-01-21,0.14,-1,1.14
+558,Buffalo Sabres,3,4,Pittsburgh Penguins,2022-12-09,0.13,-1,1.13
+559,Boston Bruins,4,1,Philadelphia Flyers,2022-11-17,1.89,3,1.11
+560,Washington Capitals,2,3,Vegas Golden Knights,2022-11-01,0.11,-1,1.11
+561,Winnipeg Jets,2,3,Buffalo Sabres,2023-01-26,0.10,-1,1.10
+562,New York Rangers,3,4,Edmonton Oilers,2022-11-26,0.10,-1,1.10
+563,Florida Panthers,5,3,Arizona Coyotes,2023-01-03,0.90,2,1.10
+564,Montréal Canadiens,2,4,Los Angeles Kings,2022-12-10,-0.90,-2,1.10
+565,Calgary Flames,3,2,Vegas Golden Knights,2022-10-18,-0.09,1,1.09
+566,Philadelphia Flyers,5,3,Columbus Blue Jackets,2022-12-20,0.91,2,1.09
+567,New York Islanders,2,1,Vegas Golden Knights,2023-01-28,-0.09,1,1.09
+568,Florida Panthers,3,2,New York Islanders,2022-10-23,-0.09,1,1.09
+569,New Jersey Devils,1,2,Toronto Maple Leafs,2022-11-23,0.08,-1,1.08
+570,Buffalo Sabres,6,3,Anaheim Ducks,2023-01-21,1.92,3,1.08
+571,Colorado Avalanche,4,2,St. Louis Blues,2023-01-28,0.92,2,1.08
+572,Tampa Bay Lightning,5,4,Dallas Stars,2022-11-15,-0.08,1,1.08
+573,Columbus Blue Jackets,2,4,Detroit Red Wings,2022-12-04,-0.92,-2,1.08
+574,St. Louis Blues,3,5,Buffalo Sabres,2023-01-24,-0.92,-2,1.08
+575,Carolina Hurricanes,5,4,Dallas Stars,2022-12-17,-0.07,1,1.07
+576,Dallas Stars,2,3,Carolina Hurricanes,2023-01-25,0.07,-1,1.07
+577,Edmonton Oilers,2,3,Colorado Avalanche,2023-01-07,0.06,-1,1.06
+578,Anaheim Ducks,4,5,Seattle Kraken,2022-11-27,-2.06,-1,1.06
+579,Tampa Bay Lightning,4,3,Toronto Maple Leafs,2022-12-03,-0.06,1,1.06
+580,Carolina Hurricanes,4,1,Columbus Blue Jackets,2022-10-12,1.95,3,1.05
+581,Tampa Bay Lightning,4,1,Columbus Blue Jackets,2022-12-15,1.95,3,1.05
+582,Columbus Blue Jackets,2,5,Tampa Bay Lightning,2022-10-14,-1.95,-3,1.05
+583,Tampa Bay Lightning,6,3,Columbus Blue Jackets,2023-01-10,1.95,3,1.05
+584,Seattle Kraken,2,3,Winnipeg Jets,2022-11-13,0.04,-1,1.04
+585,Edmonton Oilers,5,3,Vancouver Canucks,2022-10-12,0.97,2,1.03
+586,Nashville Predators,3,4,Los Angeles Kings,2022-10-18,0.03,-1,1.03
+587,Vancouver Canucks,2,4,Edmonton Oilers,2023-01-21,-0.97,-2,1.03
+588,Seattle Kraken,3,2,New York Rangers,2022-11-17,-0.02,1,1.02
+589,Winnipeg Jets,3,2,Anaheim Ducks,2022-11-17,2.02,1,1.02
+590,Nashville Predators,2,3,Ottawa Senators,2022-12-10,0.02,-1,1.02
+591,St. Louis Blues,1,3,Edmonton Oilers,2022-10-26,-0.98,-2,1.02
+592,Columbus Blue Jackets,1,2,Dallas Stars,2022-12-19,-2.02,-1,1.02
+593,New York Rangers,1,3,Boston Bruins,2023-01-19,-0.99,-2,1.01
+594,Detroit Red Wings,1,2,Philadelphia Flyers,2023-01-21,0.01,-1,1.01
+595,New Jersey Devils,3,0,Chicago Blackhawks,2022-12-06,1.99,3,1.01
+596,Toronto Maple Leafs,3,2,Dallas Stars,2022-10-20,-0.01,1,1.01
+597,St. Louis Blues,3,1,Anaheim Ducks,2022-11-21,1.00,2,1.00
+598,Winnipeg Jets,4,2,Vancouver Canucks,2022-12-29,1.00,2,1.00
+599,San Jose Sharks,2,4,Vegas Golden Knights,2022-10-25,-1.00,-2,1.00
+600,New York Islanders,4,3,Calgary Flames,2022-11-07,0.01,1,0.99
+601,Tampa Bay Lightning,3,4,Carolina Hurricanes,2022-11-03,-0.01,-1,0.99
+602,Los Angeles Kings,2,3,Ottawa Senators,2022-11-27,-0.01,-1,0.99
+603,Winnipeg Jets,4,2,St. Louis Blues,2023-01-30,1.02,2,0.98
+604,Winnipeg Jets,5,2,Anaheim Ducks,2022-12-04,2.02,3,0.98
+605,Chicago Blackhawks,2,4,Nashville Predators,2022-12-21,-1.04,-2,0.96
+606,Seattle Kraken,3,2,Winnipeg Jets,2022-12-18,0.04,1,0.96
+607,Edmonton Oilers,1,2,Winnipeg Jets,2022-12-31,-0.04,-1,0.96
+608,Washington Capitals,3,2,Pittsburgh Penguins,2023-01-26,0.05,1,0.95
+609,Boston Bruins,5,2,Vancouver Canucks,2022-11-13,2.06,3,0.94
+610,Pittsburgh Penguins,4,3,Vegas Golden Knights,2022-12-01,0.06,1,0.94
+611,San Jose Sharks,3,2,Arizona Coyotes,2022-12-13,0.06,1,0.94
+612,Dallas Stars,2,3,New Jersey Devils,2023-01-27,-0.07,-1,0.93
+613,Colorado Avalanche,3,2,Washington Capitals,2023-01-24,0.08,1,0.92
+614,Toronto Maple Leafs,2,3,New Jersey Devils,2022-11-17,-0.08,-1,0.92
+615,Florida Panthers,4,5,Calgary Flames,2022-11-19,-0.08,-1,0.92
+616,New York Rangers,6,4,St. Louis Blues,2022-12-05,1.08,2,0.92
+617,Detroit Red Wings,2,4,Toronto Maple Leafs,2022-11-28,-1.09,-2,0.91
+618,Washington Capitals,4,5,Buffalo Sabres,2023-01-03,-0.09,-1,0.91
+619,Colorado Avalanche,3,4,Winnipeg Jets,2022-10-19,-0.10,-1,0.90
+620,Chicago Blackhawks,2,3,Montréal Canadiens,2022-11-25,-0.11,-1,0.89
+621,Tampa Bay Lightning,2,1,New York Rangers,2022-12-29,0.14,1,0.86
+622,Colorado Avalanche,2,3,Seattle Kraken,2022-10-21,-0.14,-1,0.86
+623,Buffalo Sabres,3,4,Seattle Kraken,2023-01-10,-0.14,-1,0.86
+624,Buffalo Sabres,1,3,Boston Bruins,2022-11-12,-1.15,-2,0.85
+625,Colorado Avalanche,1,2,New York Rangers,2022-12-09,-0.16,-1,0.84
+626,Pittsburgh Penguins,2,1,Calgary Flames,2022-11-23,0.16,1,0.84
+627,Carolina Hurricanes,3,2,Seattle Kraken,2022-12-15,0.17,1,0.83
+628,Philadelphia Flyers,3,2,Vancouver Canucks,2022-10-15,0.17,1,0.83
+629,Buffalo Sabres,6,5,Minnesota Wild,2023-01-07,0.18,1,0.82
+630,Detroit Red Wings,4,5,Los Angeles Kings,2022-10-17,-0.19,-1,0.81
+631,Los Angeles Kings,4,3,Detroit Red Wings,2022-11-12,0.19,1,0.81
+632,Vegas Golden Knights,2,3,Colorado Avalanche,2022-10-22,-0.19,-1,0.81
+633,New York Islanders,3,4,Washington Capitals,2023-01-16,-0.19,-1,0.81
+634,Boston Bruins,4,2,Columbus Blue Jackets,2022-12-17,2.80,2,0.80
+635,Philadelphia Flyers,3,4,Los Angeles Kings,2023-01-24,-0.20,-1,0.80
+636,Vegas Golden Knights,2,3,Buffalo Sabres,2022-12-19,-0.20,-1,0.80
+637,Toronto Maple Leafs,3,2,New York Rangers,2023-01-25,0.21,1,0.79
+638,Pittsburgh Penguins,4,3,Anaheim Ducks,2023-01-16,1.79,1,0.79
+639,St. Louis Blues,2,4,Tampa Bay Lightning,2023-01-14,-1.22,-2,0.78
+640,Pittsburgh Penguins,7,6,Florida Panthers,2023-01-24,0.23,1,0.77
+641,Seattle Kraken,3,2,Washington Capitals,2022-12-01,0.23,1,0.77
+642,St. Louis Blues,4,6,Carolina Hurricanes,2022-12-01,-1.23,-2,0.77
+643,Montréal Canadiens,4,6,Vegas Golden Knights,2022-11-05,-1.24,-2,0.76
+644,Montréal Canadiens,1,3,Minnesota Wild,2022-10-25,-1.25,-2,0.75
+645,Calgary Flames,6,5,Los Angeles Kings,2022-11-14,0.25,1,0.75
+646,Chicago Blackhawks,1,3,New York Islanders,2022-11-01,-1.26,-2,0.74
+647,Minnesota Wild,5,4,Anaheim Ducks,2022-12-03,1.74,1,0.74
+648,Edmonton Oilers,4,3,Vegas Golden Knights,2022-11-19,0.26,1,0.74
+649,Vegas Golden Knights,3,4,Edmonton Oilers,2023-01-14,-0.26,-1,0.74
+650,Pittsburgh Penguins,2,3,Seattle Kraken,2022-11-05,-0.27,-1,0.73
+651,Colorado Avalanche,1,0,New York Islanders,2022-12-19,0.28,1,0.72
+652,Buffalo Sabres,3,2,New York Islanders,2023-01-19,0.28,1,0.72
+653,San Jose Sharks,3,4,Vancouver Canucks,2022-11-27,-0.29,-1,0.71
+654,New Jersey Devils,4,3,New York Rangers,2023-01-07,0.29,1,0.71
+655,San Jose Sharks,5,6,Vancouver Canucks,2022-12-07,-0.29,-1,0.71
+656,Buffalo Sabres,5,6,Tampa Bay Lightning,2022-11-28,-0.30,-1,0.70
+657,Vegas Golden Knights,5,4,Nashville Predators,2022-12-31,0.31,1,0.69
+658,Ottawa Senators,4,5,Vegas Golden Knights,2022-11-03,-0.33,-1,0.67
+659,New York Rangers,4,3,Minnesota Wild,2023-01-10,0.34,1,0.66
+660,Los Angeles Kings,3,4,Vegas Golden Knights,2022-10-11,-0.34,-1,0.66
+661,Washington Capitals,3,1,Montréal Canadiens,2022-10-15,1.35,2,0.65
+662,New Jersey Devils,2,1,San Jose Sharks,2022-10-22,1.65,1,0.65
+663,Calgary Flames,1,2,Edmonton Oilers,2022-12-27,-0.35,-1,0.65
+664,San Jose Sharks,3,4,New Jersey Devils,2023-01-16,-1.65,-1,0.65
+665,Vegas Golden Knights,1,3,Boston Bruins,2022-12-11,-1.35,-2,0.65
+666,Calgary Flames,2,3,Edmonton Oilers,2022-10-29,-0.35,-1,0.65
+667,Vancouver Canucks,3,2,Arizona Coyotes,2022-12-03,0.36,1,0.64
+668,Detroit Red Wings,2,3,Florida Panthers,2023-01-06,-0.36,-1,0.64
+669,Anaheim Ducks,2,3,Calgary Flames,2022-12-23,-1.63,-1,0.63
+670,Florida Panthers,4,3,Philadelphia Flyers,2022-10-19,0.37,1,0.63
+671,Anaheim Ducks,2,3,Chicago Blackhawks,2022-11-12,-0.38,-1,0.62
+672,Winnipeg Jets,3,2,Calgary Flames,2023-01-03,0.39,1,0.61
+673,Edmonton Oilers,3,4,New Jersey Devils,2022-11-03,-0.39,-1,0.61
+674,Chicago Blackhawks,4,5,Edmonton Oilers,2022-11-30,-1.60,-1,0.60
+675,Vancouver Canucks,3,4,Nashville Predators,2022-11-05,-0.40,-1,0.60
+676,Carolina Hurricanes,3,2,Washington Capitals,2022-10-31,0.40,1,0.60
+677,Chicago Blackhawks,5,6,Edmonton Oilers,2022-10-27,-1.60,-1,0.60
+678,Chicago Blackhawks,3,5,Pittsburgh Penguins,2022-11-20,-1.41,-2,0.59
+679,Montréal Canadiens,2,4,Boston Bruins,2023-01-24,-2.59,-2,0.59
+680,Boston Bruins,6,3,Arizona Coyotes,2022-10-15,2.42,3,0.58
+681,Edmonton Oilers,4,3,Florida Panthers,2022-11-28,0.43,1,0.57
+682,Calgary Flames,4,5,Seattle Kraken,2022-11-01,-0.43,-1,0.57
+683,Boston Bruins,3,1,Calgary Flames,2022-11-10,1.44,2,0.56
+684,Columbus Blue Jackets,3,4,Washington Capitals,2023-01-31,-1.56,-1,0.56
+685,Pittsburgh Penguins,3,4,Carolina Hurricanes,2022-12-22,-0.44,-1,0.56
+686,Washington Capitals,1,0,Columbus Blue Jackets,2023-01-08,1.56,1,0.56
+687,Ottawa Senators,2,3,Washington Capitals,2022-12-22,-0.44,-1,0.56
+688,Carolina Hurricanes,3,2,Pittsburgh Penguins,2022-12-18,0.44,1,0.56
+689,Pittsburgh Penguins,2,3,Carolina Hurricanes,2022-11-29,-0.44,-1,0.56
+690,Carolina Hurricanes,2,1,Pittsburgh Penguins,2023-01-14,0.44,1,0.56
+691,New Jersey Devils,1,0,Colorado Avalanche,2022-10-28,0.45,1,0.55
+692,Toronto Maple Leafs,3,2,Washington Capitals,2022-10-13,0.45,1,0.55
+693,Washington Capitals,4,3,Los Angeles Kings,2022-10-22,0.45,1,0.55
+694,Buffalo Sabres,4,3,Chicago Blackhawks,2022-10-29,1.54,1,0.54
+695,Washington Capitals,1,2,Dallas Stars,2022-12-15,-0.47,-1,0.53
+696,Winnipeg Jets,3,2,Montréal Canadiens,2022-11-03,1.53,1,0.53
+697,Detroit Red Wings,3,2,San Jose Sharks,2023-01-24,0.47,1,0.53
+698,San Jose Sharks,3,4,Philadelphia Flyers,2022-12-29,-0.47,-1,0.53
+699,San Jose Sharks,1,2,Carolina Hurricanes,2022-10-14,-1.51,-1,0.51
+700,Carolina Hurricanes,5,4,San Jose Sharks,2023-01-27,1.51,1,0.51
+701,Edmonton Oilers,5,3,Montréal Canadiens,2022-12-03,1.50,2,0.50
+702,San Jose Sharks,3,4,Tampa Bay Lightning,2022-10-29,-1.50,-1,0.50
+703,Nashville Predators,2,3,Colorado Avalanche,2022-12-23,-0.50,-1,0.50
+704,Boston Bruins,5,3,Florida Panthers,2022-10-17,1.52,2,0.48
+705,Vancouver Canucks,7,6,Montréal Canadiens,2022-12-05,0.53,1,0.47
+706,Detroit Red Wings,4,3,Arizona Coyotes,2022-11-25,0.54,1,0.46
+707,Vegas Golden Knights,2,1,Philadelphia Flyers,2022-12-09,0.54,1,0.46
+708,Florida Panthers,4,3,Vancouver Canucks,2023-01-14,0.54,1,0.46
+709,Columbus Blue Jackets,2,3,Vegas Golden Knights,2022-11-28,-1.45,-1,0.45
+710,Minnesota Wild,3,2,Philadelphia Flyers,2023-01-26,0.55,1,0.45
+711,Minnesota Wild,3,4,Toronto Maple Leafs,2022-11-25,-0.55,-1,0.45
+712,Anaheim Ducks,3,5,Florida Panthers,2022-11-06,-1.55,-2,0.45
+713,Toronto Maple Leafs,3,1,San Jose Sharks,2022-11-30,1.57,2,0.43
+714,Colorado Avalanche,2,1,Montréal Canadiens,2022-12-21,1.43,1,0.43
+715,Tampa Bay Lightning,5,3,Arizona Coyotes,2022-12-31,1.57,2,0.43
+716,Boston Bruins,4,3,New York Islanders,2022-12-13,1.43,1,0.43
+717,Arizona Coyotes,2,3,New York Rangers,2022-10-30,-1.42,-1,0.42
+718,New Jersey Devils,2,1,Pittsburgh Penguins,2023-01-22,0.58,1,0.42
+719,Nashville Predators,2,1,Anaheim Ducks,2022-11-29,1.42,1,0.42
+720,Winnipeg Jets,2,1,Nashville Predators,2022-12-15,0.60,1,0.40
+721,Carolina Hurricanes,3,2,Calgary Flames,2022-11-26,0.60,1,0.40
+722,Calgary Flames,3,2,Vancouver Canucks,2022-12-31,0.62,1,0.38
+723,New Jersey Devils,4,2,Anaheim Ducks,2022-10-18,2.37,2,0.37
+724,Washington Capitals,4,3,Detroit Red Wings,2022-12-19,0.64,1,0.36
+725,Winnipeg Jets,2,1,Arizona Coyotes,2023-01-15,1.36,1,0.36
+726,Columbus Blue Jackets,2,3,New York Islanders,2022-11-25,-1.36,-1,0.36
+727,San Jose Sharks,1,2,New York Rangers,2022-11-19,-1.36,-1,0.36
+728,New York Islanders,2,1,Columbus Blue Jackets,2022-12-29,1.36,1,0.36
+729,Arizona Coyotes,2,3,Winnipeg Jets,2022-10-28,-1.36,-1,0.36
+730,New York Islanders,4,3,Columbus Blue Jackets,2022-11-12,1.36,1,0.36
+731,Chicago Blackhawks,1,3,Winnipeg Jets,2022-12-09,-1.64,-2,0.36
+732,Chicago Blackhawks,3,4,Minnesota Wild,2022-10-30,-1.36,-1,0.36
+733,Washington Capitals,3,2,Philadelphia Flyers,2022-11-23,0.65,1,0.35
+734,New Jersey Devils,3,2,Vegas Golden Knights,2023-01-24,0.65,1,0.35
+735,San Jose Sharks,2,4,Boston Bruins,2023-01-07,-2.35,-2,0.35
+736,Calgary Flames,4,3,Columbus Blue Jackets,2023-01-23,1.35,1,0.35
+737,Vegas Golden Knights,1,0,Chicago Blackhawks,2022-10-13,1.35,1,0.35
+738,Boston Bruins,4,3,Minnesota Wild,2022-10-22,1.34,1,0.34
+739,Los Angeles Kings,3,2,San Jose Sharks,2022-12-17,0.66,1,0.34
+740,New York Islanders,1,2,Dallas Stars,2023-01-10,-0.66,-1,0.34
+741,Toronto Maple Leafs,5,4,Calgary Flames,2022-12-10,0.66,1,0.34
+742,Los Angeles Kings,4,3,San Jose Sharks,2023-01-11,0.66,1,0.34
+743,Florida Panthers,2,3,Tampa Bay Lightning,2022-10-21,-0.67,-1,0.33
+744,Los Angeles Kings,8,9,Seattle Kraken,2022-11-29,-0.67,-1,0.33
+745,Seattle Kraken,3,2,Los Angeles Kings,2022-11-19,0.67,1,0.33
+746,San Jose Sharks,2,3,Nashville Predators,2022-10-08,-0.70,-1,0.30
+747,New Jersey Devils,3,4,Boston Bruins,2022-12-23,-0.70,-1,0.30
+748,Pittsburgh Penguins,5,6,Boston Bruins,2022-11-01,-1.29,-1,0.29
+749,New Jersey Devils,4,2,Arizona Coyotes,2022-11-12,1.71,2,0.29
+750,St. Louis Blues,4,5,Toronto Maple Leafs,2022-12-27,-1.29,-1,0.29
+751,Vancouver Canucks,4,5,Vegas Golden Knights,2022-11-21,-0.71,-1,0.29
+752,Montréal Canadiens,3,4,Detroit Red Wings,2023-01-26,-0.71,-1,0.29
+753,Boston Bruins,2,1,Pittsburgh Penguins,2023-01-02,1.29,1,0.29
+754,Minnesota Wild,4,3,Vancouver Canucks,2022-10-20,0.72,1,0.28
+755,Vegas Golden Knights,5,4,St. Louis Blues,2022-12-23,0.72,1,0.28
+756,Colorado Avalanche,3,2,Philadelphia Flyers,2022-12-13,0.73,1,0.27
+757,Toronto Maple Leafs,3,2,Vancouver Canucks,2022-11-12,1.27,1,0.27
+758,Toronto Maple Leafs,5,4,Florida Panthers,2023-01-17,0.73,1,0.27
+759,Detroit Red Wings,4,5,Buffalo Sabres,2022-11-30,-0.73,-1,0.27
+760,New Jersey Devils,3,2,Calgary Flames,2022-11-08,0.74,1,0.26
+761,Calgary Flames,3,4,New Jersey Devils,2022-11-05,-0.74,-1,0.26
+762,Nashville Predators,4,3,Arizona Coyotes,2022-11-21,0.76,1,0.24
+763,Pittsburgh Penguins,5,4,Vancouver Canucks,2023-01-10,0.77,1,0.23
+764,Anaheim Ducks,2,4,Tampa Bay Lightning,2022-10-26,-2.22,-2,0.22
+765,Vancouver Canucks,2,3,Carolina Hurricanes,2022-10-24,-1.22,-1,0.22
+766,Seattle Kraken,3,1,Columbus Blue Jackets,2023-01-28,1.78,2,0.22
+767,Boston Bruins,4,3,Toronto Maple Leafs,2023-01-14,0.79,1,0.21
+768,Tampa Bay Lightning,5,4,Vancouver Canucks,2023-01-12,1.21,1,0.21
+769,Columbus Blue Jackets,1,3,New York Rangers,2023-01-16,-1.80,-2,0.20
+770,Nashville Predators,2,3,Tampa Bay Lightning,2022-11-19,-0.81,-1,0.19
+771,Dallas Stars,4,2,Montréal Canadiens,2022-12-23,1.82,2,0.18
+772,Philadelphia Flyers,2,3,New Jersey Devils,2022-12-03,-1.18,-1,0.18
+773,Tampa Bay Lightning,4,3,Ottawa Senators,2022-11-01,0.82,1,0.18
+774,San Jose Sharks,3,4,Florida Panthers,2022-11-03,-0.83,-1,0.17
+775,Boston Bruins,3,2,Carolina Hurricanes,2022-11-25,0.84,1,0.16
+776,Carolina Hurricanes,5,4,Los Angeles Kings,2023-01-31,0.85,1,0.15
+777,New York Islanders,2,1,Montréal Canadiens,2023-01-14,1.15,1,0.15
+778,Nashville Predators,2,1,Columbus Blue Jackets,2023-01-17,1.14,1,0.14
+779,Toronto Maple Leafs,2,1,Nashville Predators,2023-01-11,0.87,1,0.13
+780,Nashville Predators,2,3,Dallas Stars,2022-12-27,-0.88,-1,0.12
+781,New York Rangers,1,0,Philadelphia Flyers,2022-11-01,0.89,1,0.11
+782,Dallas Stars,3,2,Detroit Red Wings,2022-12-10,1.11,1,0.11
+783,Toronto Maple Leafs,3,2,Ottawa Senators,2022-10-15,0.89,1,0.11
+784,Toronto Maple Leafs,4,3,Philadelphia Flyers,2022-12-22,1.10,1,0.10
+785,Dallas Stars,4,3,Ottawa Senators,2022-12-08,0.90,1,0.10
+786,Ottawa Senators,3,2,Montréal Canadiens,2022-12-14,0.91,1,0.09
+787,Montréal Canadiens,4,5,Ottawa Senators,2023-01-31,-0.91,-1,0.09
+788,St. Louis Blues,2,3,Colorado Avalanche,2022-12-11,-0.92,-1,0.08
+789,New York Rangers,6,4,Anaheim Ducks,2022-10-17,2.08,2,0.08
+790,Minnesota Wild,2,1,Arizona Coyotes,2023-01-14,1.08,1,0.08
+791,Minnesota Wild,4,3,Arizona Coyotes,2022-11-27,1.08,1,0.08
+792,Dallas Stars,6,4,Chicago Blackhawks,2022-11-23,1.92,2,0.08
+793,Boston Bruins,3,1,St. Louis Blues,2022-11-07,2.07,2,0.07
+794,Boston Bruins,3,2,Winnipeg Jets,2022-12-22,1.06,1,0.06
+795,Detroit Red Wings,0,1,Carolina Hurricanes,2022-12-13,-1.04,-1,0.04
+796,Philadelphia Flyers,3,4,Carolina Hurricanes,2022-10-29,-1.04,-1,0.04
+797,Carolina Hurricanes,6,5,Philadelphia Flyers,2022-12-23,1.04,1,0.04
+798,New Jersey Devils,4,3,Ottawa Senators,2022-11-10,0.97,1,0.03
+799,Calgary Flames,3,2,Arizona Coyotes,2022-12-05,0.97,1,0.03
+800,Los Angeles Kings,2,1,Chicago Blackhawks,2022-11-10,1.01,1,0.01
+801,Chicago Blackhawks,1,2,Los Angeles Kings,2023-01-22,-1.01,-1,0.01
