@@ -10,4 +10,9 @@ Machine learning model determines the probability of each outcome for any NHL ga
 
 ## Model Accuracy
 
-At the end of each season, the model's log loss is typically between 0.630 and 0.640
+Here are the log loss values for the model over the past 5 seasons. (Note: Lower is better!)
+2021-22: 0.633
+2020-21: 0.638
+2019-20: 0.666
+2018-19: 0.663
+2017-18: 0.656
