@@ -5,6 +5,7 @@ from scipy.stats import pearsonr
 from scipy.optimize import curve_fit
 from sklearn.metrics import log_loss
 import urllib.request, json
+import os
 import time
 
 class Team():
@@ -207,6 +208,24 @@ def calc_spread(team, opponent, param, lower_bound_spread, upper_bound_spread):
     else: 
         return 1/(1+np.exp((upper_bound_spread-(team.power-opponent.power))/param)) - 1/(1+np.exp((lower_bound_spread-(team.power-opponent.power))/param))
 
+def download_csv_option(df, filename):
+    valid = False
+    while valid == False:
+        user_input = input('Would you like to download this as a CSV? (Y/N): ')
+        if user_input.lower() in ['y', 'yes', 'y.', 'yes.']:
+            valid = True
+        elif user_input.lower() in ['n', 'no', 'n.', 'no.']:
+            return
+        else:
+            print(f'Sorry, I could not understand "{user_input}". Please enter Y or N: ')
+
+    if not os.path.exists(f'{os.path.dirname(__file__)}/Output CSV Data'):
+        os.makedirs(f'{os.path.dirname(__file__)}/Output CSV Data')
+    df.to_csv(f'{os.path.dirname(__file__)}/Output CSV Data/{filename}.csv')
+    print(f'{filename}.csv has been downloaded to the following directory: {os.path.dirname(__file__)}/Output CSV Data')
+    return
+
+
 def get_todays_games(param, team_list):
     with urllib.request.urlopen("https://statsapi.web.nhl.com/api/v1/schedule?expand=schedule.linescore") as url:
         today_schedule = json.load(url)
@@ -267,8 +286,8 @@ def custom_game_selector(param, team_list):
     game_probability_df = game_probability_df.append({'':'Win by 4 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 3.5, 4.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 3.5, 4.5)*100:.2f}%'}, ignore_index = True)
     game_probability_df = game_probability_df.append({'':'Win by 5+ Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 4.5, "inf")*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 4.5, "inf")*100:.2f}%'}, ignore_index = True)
     game_probability_df = game_probability_df.set_index('')
-    print()
-    print(game_probability_df)
+
+    return home_team, away_team, game_probability_df
 
 def get_upsets(total_game_list):
     upset_df = pd.DataFrame(columns = ['Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'Date', 'xGD', 'GD', 'Upset Rating'])
@@ -335,7 +354,7 @@ def team_game_log(team_list):
         game_log_df = game_log_df.append({'Date':game.date, 'Opponent':opponent.name, 'GF':int(goals_for), 'GA':int(goals_against), 'Performance':round(opponent.power + goals_for - goals_against,2)}, ignore_index = True)
     
     game_log_df.index += 1 
-    return game_log_df
+    return team, game_log_df
 
 def get_team_prob_breakdown(team_list, param):
     valid = False
@@ -368,7 +387,7 @@ def get_team_prob_breakdown(team_list, param):
 
     prob_breakdown_df = prob_breakdown_df.set_index('Opponent')
     prob_breakdown_df = prob_breakdown_df.sort_values(by=['PCT'], ascending=False)
-    return prob_breakdown_df
+    return team, prob_breakdown_df
 
 def extra_menu(total_game_list, team_list, param):
     while True:
@@ -385,7 +404,7 @@ def extra_menu(total_game_list, team_list, param):
             user_option = input('Enter a menu option: ')
             try:
                 user_option = int(user_option)
-                if user_option >= 1 and user_option <= 5:
+                if user_option >= 1 and user_option <= 6:
                     print()
                     valid = True
                 else:
@@ -394,23 +413,31 @@ def extra_menu(total_game_list, team_list, param):
                 print(f'Your option "{user_option}" is invalid.', end=' ')
 
         if user_option == 1:
-            print(get_upsets(total_game_list))
+            upsets = get_upsets(total_game_list)
+            print(upsets)
+            download_csv_option(upsets, 'biggest_upsets')
         elif user_option == 2:
-            print(get_best_performances(total_game_list))
+            performances = get_best_performances(total_game_list)
+            print(performances)
+            download_csv_option(performances, 'best_performances')
         elif user_option == 3:
-            print(get_team_consistency(team_list))
+            consistency = get_team_consistency(team_list)
+            print(consistency)
+            download_csv_option(consistency, 'most_consistent_teams')
         elif user_option == 4:
-            print(team_game_log(team_list))
+            team, game_log = team_game_log(team_list)
+            print(game_log)
+            download_csv_option(game_log, f'{team.name.replace(" ", "_").lower()}_game_log')
         elif user_option == 5:
-            print(get_team_prob_breakdown(team_list, param))
+            team, team_probabilities = get_team_prob_breakdown(team_list, param)
+            print(team_probabilities)
+            download_csv_option(team_probabilities, f'{team.name.replace(" ", "_").lower()}_game_log')
         elif user_option == 6:
             pass
 
         return
 
-
-
-def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list):
+def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list, date):
     while True:
         print("""--MAIN MENU--
     1. View Power Rankings
@@ -420,8 +447,6 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
     5. View Program Performance
     6. Extra Options
     7. Quit""")
-
-    # Give users option to download csv's
 
         valid = False
         while valid == False:
@@ -438,10 +463,14 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
 
         if user_option == 1:
             print(power_df)
+            download_csv_option(power_df, 'power_rankings')
         elif user_option == 2:
             print(today_games_df)
+            download_csv_option(today_games_df, f'{date}_games')
         elif user_option == 3:
-            custom_game_selector(param, team_list)
+            home_team, away_team, custom_game_df = custom_game_selector(param, team_list)
+            print(custom_game_df)
+            download_csv_option(custom_game_df, f'{home_team.name.replace(" ", "_").lower()}_vs_{away_team.name.replace(" ", "_").lower()}_game_probabilities')
         elif user_option == 4:
             model_performance(xpoints, ypoints, param)
         elif user_option == 5:
@@ -468,7 +497,7 @@ def main():
     date, today_games_df = get_todays_games(param, team_list)
 
     computation_time = time.time()-start_time
-    menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list)
+    menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list, date)
 
 if __name__ == '__main__':
     main()
