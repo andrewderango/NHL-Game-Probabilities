@@ -1,3 +1,13 @@
 # NHL Game Probabilities
 
-Displays the probability of each NHL team winning for the current day's games. All data is scraped from the NHL's own API. More features are also available. For example, you can choose any 2 NHL teams and view the probability of each team winning, their statistics from the season thus far, and goal spread probabilities.
+Machine learning model determines the probability of each outcome for any NHL game. This includes the probability of each team winning, as well as the probabilities for goal spreads. All NHL data is scraped from the NHL's own API. There are many other features available that can be navigated with a user-friendly menu:
+
+- Probability of today's games
+- Power rankings of each NHL team
+- View biggest upsets
+- View best single-game performances by a team
+- View the most consistent teams in the league
+
+## Model Accuracy
+
+At the end of each season, the model's log loss is typically between 0.630 and 0.640
