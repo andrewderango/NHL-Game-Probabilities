@@ -232,25 +232,32 @@ def get_todays_games(param, team_list):
 
     today_games_df = pd.DataFrame(columns = ['GameID', 'Game State', 'Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'Pre-Game Home Win Probability', 'Pre-Game Away Win Probability', 'Home Record', 'Away Record'])
 
-    date = today_schedule['dates'][0]['date']
-    for games in today_schedule['dates'][0]['games']:
-        for team in team_list:
-            if team.name == games['teams']['home']['team']['name']:
-                home_team_obj = team
-            elif team.name == games['teams']['away']['team']['name']:
-                away_team_obj = team
+    try:
 
-        home_win_prob = calc_prob(home_team_obj, away_team_obj, param)
-        away_win_prob = 1-home_win_prob
+        date = today_schedule['dates'][0]['date']
+        for games in today_schedule['dates'][0]['games']:
+            for team in team_list:
+                if team.name == games['teams']['home']['team']['name']:
+                    home_team_obj = team
+                elif team.name == games['teams']['away']['team']['name']:
+                    away_team_obj = team
 
-        if games['status']['abstractGameState'] == 'Live':
-            today_games_df = today_games_df.append({'GameID':games['gamePk'], 'Game State':f"{games['linescore']['currentPeriodTimeRemaining']} {games['linescore']['currentPeriodOrdinal']}", 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}, ignore_index = True)
-        elif games['status']['abstractGameState'] == 'Final':
-            today_games_df = today_games_df.append({'GameID':games['gamePk'], 'Game State':'Final', 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}, ignore_index = True)
-        else:
-            today_games_df = today_games_df.append({'GameID':games['gamePk'], 'Game State':'Pre-Game', 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}, ignore_index = True)
+            home_win_prob = calc_prob(home_team_obj, away_team_obj, param)
+            away_win_prob = 1-home_win_prob
 
-    today_games_df.index += 1 
+            if games['status']['abstractGameState'] == 'Live':
+                today_games_df = today_games_df.append({'GameID':games['gamePk'], 'Game State':f"{games['linescore']['currentPeriodTimeRemaining']} {games['linescore']['currentPeriodOrdinal']}", 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}, ignore_index = True)
+            elif games['status']['abstractGameState'] == 'Final':
+                today_games_df = today_games_df.append({'GameID':games['gamePk'], 'Game State':'Final', 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}, ignore_index = True)
+            else:
+                today_games_df = today_games_df.append({'GameID':games['gamePk'], 'Game State':'Pre-Game', 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}, ignore_index = True)
+        
+        today_games_df.index += 1 
+
+    except IndexError:
+        today_games_df = None
+        date = None
+
     return date, today_games_df
 
 def custom_game_selector(param, team_list):
@@ -465,8 +472,11 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
             print(power_df)
             download_csv_option(power_df, 'power_rankings')
         elif user_option == 2:
-            print(today_games_df)
-            download_csv_option(today_games_df, f'{date}_games')
+            if today_games_df is not None:
+                print(today_games_df)
+                download_csv_option(today_games_df, f'{date}_games')
+            else:
+                print('There are no games today!')
         elif user_option == 3:
             home_team, away_team, custom_game_df = custom_game_selector(param, team_list)
             print(custom_game_df)
