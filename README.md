@@ -15,4 +15,4 @@ Here are the log loss values for the model over the past 5 seasons. (Note: Lower
 2020-21: 0.638  
 2019-20: 0.666  
 2018-19: 0.663  
-2017-18: 0.656  
+2017-18: 0.656
