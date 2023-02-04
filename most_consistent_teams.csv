@@ -1,0 +1,31 @@
+,Team,Rating,Consistency (z-Score)
+1,Indiana Pacers,-1.74,1.52
+2,Miami Heat,0.30,1.39
+3,Utah Jazz,1.17,1.21
+4,Oklahoma City Thunder,1.18,1.15
+5,Minnesota Timberwolves,-0.23,1.14
+6,Los Angeles Lakers,-1.28,0.94
+7,Houston Rockets,-7.11,0.90
+8,Denver Nuggets,3.96,0.88
+9,Portland Trail Blazers,0.31,0.79
+10,Cleveland Cavaliers,4.85,0.54
+11,Philadelphia 76ers,3.33,0.46
+12,Orlando Magic,-3.08,0.43
+13,Toronto Raptors,0.83,0.37
+14,Dallas Mavericks,0.49,0.23
+15,Sacramento Kings,2.61,0.19
+16,Washington Wizards,0.13,0.03
+17,Chicago Bulls,0.50,-0.12
+18,Detroit Pistons,-6.68,-0.18
+19,Los Angeles Clippers,-0.63,-0.22
+20,New York Knicks,1.62,-0.37
+21,New Orleans Pelicans,1.11,-0.45
+22,Atlanta Hawks,-0.20,-0.46
+23,Charlotte Hornets,-6.00,-0.50
+24,Milwaukee Bucks,2.11,-0.83
+25,Boston Celtics,5.87,-1.05
+26,Golden State Warriors,-0.35,-1.08
+27,Memphis Grizzlies,3.52,-1.17
+28,Brooklyn Nets,2.02,-1.44
+29,Phoenix Suns,0.79,-1.92
+30,San Antonio Spurs,-9.33,-2.38
