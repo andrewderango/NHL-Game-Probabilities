@@ -10,7 +10,7 @@ Machine learning model determines the probability of each outcome for any NHL or
 
 ## Model Accuracy
 
-Here are the log loss values for the model over the past 5 seasons. (Note: Lower is better!)  
+Here are the log loss values for the model over the past 5 seasons for the NHL. (Note: Lower is better!)  
 - 2021-22: 0.633  
 - 2020-21: 0.638  
 - 2019-20: 0.666  
