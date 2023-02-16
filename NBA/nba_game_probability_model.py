@@ -265,7 +265,7 @@ def get_todays_games(param, team_list, games_metadf):
     # today_games_df = today_games_df.drop(['Notes', 'OT', 'Box Score Links', 'Attendance'], axis=1)
     # today_games_df['Home Win Prob', 'Away Win Prob'] = np.nan
     today_games_df = today_games_df.reindex(columns = today_games_df.columns.tolist() + ['Home Win Prob','Visitor Win Prob'])
-    today_games_df = today_games_df[['Date', 'Start (EST)', 'Home Team', 'Home Score', 'Visitor Score', 'Visiting Team', 'Home Win Prob', 'Visitor Win Prob', 'Arena']]
+    today_games_df = today_games_df[['Date', 'Start (EST)', 'Home Team', 'Home Win Prob', 'Visitor Win Prob', 'Visiting Team', 'Arena']]
     team_name_obj_dict = {}
 
     for index, row in today_games_df.iterrows():
