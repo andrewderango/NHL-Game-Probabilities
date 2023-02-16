@@ -135,10 +135,6 @@ def scrape_nba_data():
         url_table = soup.find('table', id='schedule')
 
         if month == season_months[0]:
-            # headers = []
-            # for i in url_table.find_all('th', {'scope': 'col'}):
-            #     title = i.text
-            #     headers.append(title)
             headers = ['Date', 'Start (EST)', 'Visiting Team', 'Visitor Score', 'Home Team', 'Home Score', 'Box Score Links', 'OT', 'Attendance', 'Arena', 'Notes']
             scraped_df = pd.DataFrame(columns = headers)
 
@@ -260,10 +256,6 @@ def get_todays_games(param, team_list, games_metadf):
     todays_date = f"{datetime.today().strftime('%A')[:3]}, {month_dict[str(date.today()).split('-')[1]]} {str(date.today()).split('-')[2]}, {str(date.today()).split('-')[0]}"
 
     today_games_df = games_metadf[games_metadf['Date'] == todays_date] 
-    # today_games_df.set_index('')
-    # today_games_df.rename(columns={today_games_df.columns[1]: "GameID" }, inplace = True)
-    # today_games_df = today_games_df.drop(['Notes', 'OT', 'Box Score Links', 'Attendance'], axis=1)
-    # today_games_df['Home Win Prob', 'Away Win Prob'] = np.nan
     today_games_df = today_games_df.reindex(columns = today_games_df.columns.tolist() + ['Home Win Prob','Visitor Win Prob'])
     today_games_df = today_games_df[['Date', 'Start (EST)', 'Home Team', 'Home Win Prob', 'Visitor Win Prob', 'Visiting Team', 'Arena']]
     team_name_obj_dict = {}
@@ -529,13 +521,10 @@ def main():
     assign_power(team_list, iterations)
     power_df = prepare_power_rankings(team_list)
     xpoints, ypoints, param = logistic_regression(total_game_list)
-    date, today_games_df = get_todays_games(param, team_list, games_metadf) #DEL Opp
-    # today_games_df = date = None #DEL
+    date, today_games_df = get_todays_games(param, team_list, games_metadf)
 
     computation_time = time.time()-start_time
     menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list, date)
 
 if __name__ == '__main__':
     main()
-
-# Fix today's games function
