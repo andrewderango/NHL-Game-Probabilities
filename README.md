@@ -4,21 +4,19 @@ This is a machine learning model determines the probability of each outcome for 
 
 ### Features
 
-| Feature                                            | NHL | NBA | Custom Leagues |
-|----------------------------------------------------|-----|-----|----------------|
-| Team Power Rankings                                | [x] | [x] | [x]            |
-| Game Probabilities for Today's Games               | [x] | [x] | [ ]            |
-| Live Scores for Today's Games                      | [x] | [ ] | [ ]            |
-| Game Probabilities a Game Between any 2 Teams      | [x] | [x] | [x]            |
-| View Biggest Single-Game Upsets                    | [x] | [x] | [x]            |
-| View Best Single-Game Team Performances            | [x] | [x] | [x]            |
-| Most Consistent Teams                              | [x] | [x] | [x]            |
-| Team Game Logs                                     | [x] | [x] | [x]            |
-| Win Probability for a Team Against all Other Teams | [x] | [x] | [x]            |
-| View Model Accuracy                                | [x] | [x] | [x]            |
-| Download CSV's                                     | [x] | [x] | [x]            |
-
-[x]
+| Feature                                            | NHL   | NBA | Custom Leagues |
+|----------------------------------------------------|-------|-----|----------------|
+| Team Power Rankings                                | - [x] | [x] | [x]            |
+| Game Probabilities for Today's Games               | [x]   | [x] | [ ]            |
+| Live Scores for Today's Games                      | [x]   | [ ] | [ ]            |
+| Game Probabilities a Game Between any 2 Teams      | [x]   | [x] | [x]            |
+| View Biggest Single-Game Upsets                    | [x]   | [x] | [x]            |
+| View Best Single-Game Team Performances            | [x]   | [x] | [x]            |
+| Most Consistent Teams                              | [x]   | [x] | [x]            |
+| Team Game Logs                                     | [x]   | [x] | [x]            |
+| Win Probability for a Team Against all Other Teams | [x]   | [x] | [x]            |
+| View Model Accuracy                                | [x]   | [x] | [x]            |
+| Download CSV's                                     | [x]   | [x] | [x]            |
 
 ## Model Accuracy
 
