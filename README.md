@@ -20,7 +20,7 @@ This is a machine learning model determines the probability of each outcome for 
 
 | Unchecked | Checked |
 | --------- | ------- |
-| &#9744;   | &#9745; |
+| &#9744;   | &check; |
 
 ## Model Accuracy
 
