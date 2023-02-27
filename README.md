@@ -5,7 +5,7 @@ This is a machine learning model determines the probability of each outcome for 
 ### Features
 
 | Feature                                            | NHL     | NBA     | Custom Leagues |
-|----------------------------------------------------|---------|---------|----------------|
+|----------------------------------------------------|:-------:|---------|----------------|
 | Team Power Rankings                                | &check; | &check; |     &check;    |
 | Game Probabilities for Today's Games               | &check; | &check; |                |
 | Live Scores for Today's Games                      | &check; |         |                |
