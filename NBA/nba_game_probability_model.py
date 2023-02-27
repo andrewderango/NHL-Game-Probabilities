@@ -200,7 +200,6 @@ def model_performance(xpoints, ypoints, param):
     print(f'Precise Parameter: {param}')
 
     plt.plot(xpoints, ypoints, 'o', color='grey')
-    # plt.plot(x_fitted, y_fitted, color='black', alpha=1)
     plt.plot(x_fitted, y_fitted, color='black', alpha=1, label=f'CDF (Log Loss = {log_loss(ypoints, 1/(1+np.exp((xpoints)/param))):.3f})')
     plt.legend()
     plt.title('Logistic Regression of Team Rating Difference vs Game Result')
