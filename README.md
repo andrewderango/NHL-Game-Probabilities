@@ -18,6 +18,8 @@ This is a machine learning model determines the probability of each outcome for 
 | View Model Accuracy                                | [x] | [x] | [x]            |
 | Download CSV's                                     | [x] | [x] | [x]            |
 
+[x]
+
 ## Model Accuracy
 
 Here are the log loss values for the model over the past 3 seasons for the NHL and NBA. 
