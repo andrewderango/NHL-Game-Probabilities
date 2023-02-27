@@ -187,7 +187,6 @@ def model_performance(xpoints, ypoints, param):
     print(f'Precise Parameter: {param}')
 
     plt.plot(xpoints, ypoints, 'o', color='grey')
-    # plt.plot(x_fitted, y_fitted, color='black', alpha=1)
     plt.plot(x_fitted, y_fitted, color='black', alpha=1, label=f'CDF (Log Loss = {log_loss(ypoints, 1/(1+np.exp((xpoints)/param))):.3f})')
     plt.legend()
     plt.title('Logistic Regression of Team Rating Difference vs Game Result')
@@ -381,7 +380,7 @@ def get_team_prob_breakdown(team_list, param):
             'Record': opp_team.record,
             'PCT': f'{opp_team.calc_pct():.3f}',
             'Win Probability':f'{calc_prob(team, opp_team, param)*100:.2f}%', 
-            'Lose by 5+': f'{calc_spread(team, opp_team, param, "-inf", -4.5)*100:.2f}%',  #inf
+            'Lose by 5+': f'{calc_spread(team, opp_team, param, "-inf", -4.5)*100:.2f}%',
             'Lose by 4': f'{calc_spread(team, opp_team, param, -4.5, -3.5)*100:.2f}%', 
             'Lose by 3': f'{calc_spread(team, opp_team, param, -3.5, -2.5)*100:.2f}%', 
             'Lose by 2': f'{calc_spread(team, opp_team, param, -2.5, -1.5)*100:.2f}%', 
@@ -390,7 +389,7 @@ def get_team_prob_breakdown(team_list, param):
             'Win by 2': f'{calc_spread(team, opp_team, param, 1.5, 2.5)*100:.2f}%', 
             'Win by 3': f'{calc_spread(team, opp_team, param, 2.5, 3.5)*100:.2f}%', 
             'Win by 4': f'{calc_spread(team, opp_team, param, 3.5, 4.5)*100:.2f}%',
-            'Win by 5+': f'{calc_spread(team, opp_team, param, 4.5, "inf")*100:.2f}%'}, ignore_index = True) #inf
+            'Win by 5+': f'{calc_spread(team, opp_team, param, 4.5, "inf")*100:.2f}%'}, ignore_index = True)
 
     prob_breakdown_df = prob_breakdown_df.set_index('Opponent')
     prob_breakdown_df = prob_breakdown_df.sort_values(by=['PCT'], ascending=False)
