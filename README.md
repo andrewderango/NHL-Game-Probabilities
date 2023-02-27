@@ -4,23 +4,19 @@ This is a machine learning model determines the probability of each outcome for 
 
 ### Features
 
-| Feature                                            | NHL   | NBA | Custom Leagues |
-|----------------------------------------------------|-------|-----|----------------|
-| Team Power Rankings                                | - [x] | [x] | [x]            |
-| Game Probabilities for Today's Games               | [x]   | [x] | [ ]            |
-| Live Scores for Today's Games                      | [x]   | [ ] | [ ]            |
-| Game Probabilities a Game Between any 2 Teams      | [x]   | [x] | [x]            |
-| View Biggest Single-Game Upsets                    | [x]   | [x] | [x]            |
-| View Best Single-Game Team Performances            | [x]   | [x] | [x]            |
-| Most Consistent Teams                              | [x]   | [x] | [x]            |
-| Team Game Logs                                     | [x]   | [x] | [x]            |
-| Win Probability for a Team Against all Other Teams | [x]   | [x] | [x]            |
-| View Model Accuracy                                | [x]   | [x] | [x]            |
-| Download CSV's                                     | [x]   | [x] | [x]            |
-
-| Unchecked | Checked |
-| --------- | ------- |
-| &#9744;   | &check; |
+| Feature                                            | NHL     | NBA     | Custom Leagues |
+|----------------------------------------------------|---------|---------|----------------|
+| Team Power Rankings                                | &check; | &check; | &check;        |
+| Game Probabilities for Today's Games               | &check; | &check; |                |
+| Live Scores for Today's Games                      | &check; |         |                |
+| Game Probabilities a Game Between any 2 Teams      | &check; | &check; | &check;        |
+| View Biggest Single-Game Upsets                    | &check; | &check; | &check;        |
+| View Best Single-Game Team Performances            | &check; | &check; | &check;        |
+| Most Consistent Teams                              | &check; | &check; | &check;        |
+| Team Game Logs                                     | &check; | &check; | &check;        |
+| Win Probability for a Team Against all Other Teams | &check; | &check; | &check;        |
+| View Model Accuracy                                | &check; | &check; | &check;        |
+| Download CSV's                                     | &check; | &check; | &check;        |
 
 ## Model Accuracy
 
