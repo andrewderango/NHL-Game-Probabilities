@@ -23,6 +23,6 @@ This is a machine learning model determines the probability of each outcome for 
 Here are the log loss values for the model over the past 3 seasons for the NHL and NBA. 
 | Season         | NHL   | NBA   |
 |----------------|-------|-------|
-| 2023 (Ongoing) | 0.650 | 0.636 |
+| 2023           | 0.640 | 0.636 |
 | 2022           | 0.633 | 0.623 |
 | 2021           | 0.638 | 0.639 |
