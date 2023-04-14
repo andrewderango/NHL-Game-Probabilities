@@ -129,8 +129,7 @@ def scrape_nhl_data():
     for dates in schedule_metadata['dates']:
         for games in dates['games']:
             if games['status']['abstractGameState'] == 'Final': #Completed games only
-                new_row_df = pd.DataFrame.from_dict([{'GameID':games['gamePk'], 'Date':dates['date'], 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}])
-                scraped_df = pd.concat([scraped_df, new_row_df], ignore_index = True)
+                scraped_df = pd.concat([scraped_df, pd.DataFrame.from_dict([{'GameID':games['gamePk'], 'Date':dates['date'], 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}])], ignore_index = True)
 
     return scraped_df
 
@@ -283,15 +282,15 @@ def custom_game_selector(param, team_list):
 
     game_probability_df = pd.DataFrame(columns = ['', home_team.name, away_team.name])
 
-    game_probability_df = game_probability_df.append({'':'Rating', home_team.name:f'{home_team.power:.3f}', away_team.name:f'{away_team.power:.3f}'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Record', home_team.name:f'{home_team.record}', away_team.name:f'{away_team.record}'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Point PCT', home_team.name:f'{home_team.pct:.3f}', away_team.name:f'{away_team.pct:.3f}'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Win Probability', home_team.name:f'{calc_prob(home_team, away_team, param)*100:.2f}%', away_team.name:f'{(calc_prob(away_team, home_team, param))*100:.2f}%'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Win by 1 Goal', home_team.name:f'{calc_spread(home_team, away_team, param, 0, 1.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 0, 1.5)*100:.2f}%'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Win by 2 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 1.5, 2.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 1.5, 2.5)*100:.2f}%'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Win by 3 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 2.5, 3.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 2.5, 3.5)*100:.2f}%'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Win by 4 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 3.5, 4.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 3.5, 4.5)*100:.2f}%'}, ignore_index = True)
-    game_probability_df = game_probability_df.append({'':'Win by 5+ Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 4.5, "inf")*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 4.5, "inf")*100:.2f}%'}, ignore_index = True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Rating', home_team.name:f'{home_team.power:.3f}', away_team.name:f'{away_team.power:.3f}'}])], ignore_index=True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Record', home_team.name:f'{home_team.record}', away_team.name:f'{away_team.record}'}])], ignore_index=True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Point PCT', home_team.name:f'{home_team.pct:.3f}', away_team.name:f'{away_team.pct:.3f}'}])], ignore_index=True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Win Probability', home_team.name:f'{calc_prob(home_team, away_team, param)*100:.2f}%', away_team.name:f'{(calc_prob(away_team, home_team, param))*100:.2f}%'}])], ignore_index=True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Win by 1 Goal', home_team.name:f'{calc_spread(home_team, away_team, param, 0, 1.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 0, 1.5)*100:.2f}%'}])], ignore_index=True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Win by 2 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 1.5, 2.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 1.5, 2.5)*100:.2f}%'}])], ignore_index=True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Win by 3 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 2.5, 3.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 2.5, 3.5)*100:.2f}%'}])], ignore_index=True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Win by 4 Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 3.5, 4.5)*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 3.5, 4.5)*100:.2f}%'}])], ignore_index=True)
+    game_probability_df = pd.concat([game_probability_df, pd.DataFrame.from_dict([{'':'Win by 5+ Goals', home_team.name:f'{calc_spread(home_team, away_team, param, 4.5, "inf")*100:.2f}%', away_team.name:f'{calc_spread(away_team, home_team, param, 4.5, "inf")*100:.2f}%'}])], ignore_index=True)
     game_probability_df = game_probability_df.set_index('')
 
     return home_team, away_team, game_probability_df
@@ -304,7 +303,7 @@ def get_upsets(total_game_list):
         actaul_score_diff = game.home_score - game.away_score
         upset_rating = actaul_score_diff - expected_score_diff #Positive score is an upset by the home team. Negative scores are upsets by the visiting team.
 
-        upset_df = upset_df.append({'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'Date':game.date,'xGD':f'{expected_score_diff:.2f}', 'GD':int(actaul_score_diff), 'Upset Rating':f'{abs(upset_rating):.2f}'}, ignore_index = True)
+        upset_df = pd.concat([upset_df, pd.DataFrame.from_dict([{'Home Team':game.home_team.name, 'Home Goals':int(game.home_score), 'Away Goals':int(game.away_score), 'Away Team':game.away_team.name, 'Date':game.date,'xGD':f'{expected_score_diff:.2f}', 'GD':int(actaul_score_diff), 'Upset Rating':f'{abs(upset_rating):.2f}'}])], ignore_index=True)
 
     upset_df = upset_df.sort_values(by=['Upset Rating'], ascending=False)
     upset_df = upset_df.reset_index(drop=True)
@@ -315,8 +314,8 @@ def get_best_performances(total_game_list):
     performance_df = pd.DataFrame(columns = ['Team', 'Opponent', 'GF', 'GA', 'Date', 'xGD', 'Performance'])
 
     for game in total_game_list:
-        performance_df = performance_df.append({'Team':game.home_team.name, 'Opponent':game.away_team.name, 'GF':int(game.home_score), 'GA':int(game.away_score), 'Date':game.date, 'xGD':f'{game.home_team.power-game.away_team.power:.2f}', 'Performance':round(game.away_team.power+game.home_score-game.away_score,2)}, ignore_index = True)
-        performance_df = performance_df.append({'Team':game.away_team.name, 'Opponent':game.home_team.name, 'GF':int(game.away_score), 'GA':int(game.home_score), 'Date':game.date, 'xGD':f'{game.away_team.power-game.home_team.power:.2f}', 'Performance':round(game.home_team.power+game.away_score-game.home_score,2)}, ignore_index = True)
+        performance_df = pd.concat([performance_df, pd.DataFrame.from_dict([{'Team':game.home_team.name, 'Opponent':game.away_team.name, 'GF':int(game.home_score), 'GA':int(game.away_score), 'Date':game.date, 'xGD':f'{game.home_team.power-game.away_team.power:.2f}', 'Performance':round(game.away_team.power+game.home_score-game.away_score,2)}])], ignore_index = True)
+        performance_df = pd.concat([performance_df, pd.DataFrame.from_dict([{'Team':game.away_team.name, 'Opponent':game.home_team.name, 'GF':int(game.away_score), 'GA':int(game.home_score), 'Date':game.date, 'xGD':f'{game.away_team.power-game.home_team.power:.2f}', 'Performance':round(game.home_team.power+game.away_score-game.home_score,2)}])], ignore_index = True)
 
     performance_df = performance_df.sort_values(by=['Performance'], ascending=False)
     performance_df = performance_df.reset_index(drop=True)
@@ -327,7 +326,7 @@ def get_team_consistency(team_list):
     consistency_df = pd.DataFrame(columns = ['Team', 'Rating', 'Consistency (z-Score)'])
 
     for team in team_list:
-        consistency_df = consistency_df.append({'Team':team.name, 'Rating':f'{team.power:.2f}', 'Consistency (z-Score)':team.calc_consistency()}, ignore_index = True)
+        consistency_df = pd.concat([consistency_df, pd.DataFrame.from_dict([{'Team':team.name, 'Rating':f'{team.power:.2f}', 'Consistency (z-Score)':team.calc_consistency()}])], ignore_index = True)
 
     consistency_df['Consistency (z-Score)'] = consistency_df['Consistency (z-Score)'].apply(lambda x: (x-consistency_df['Consistency (z-Score)'].mean())/-consistency_df['Consistency (z-Score)'].std())
 
@@ -358,8 +357,9 @@ def team_game_log(team_list):
             goals_for = game.away_score
             opponent = game.home_team
             goals_against = game.home_score
-        game_log_df = game_log_df.append({'Date':game.date, 'Opponent':opponent.name, 'GF':int(goals_for), 'GA':int(goals_against), 'Performance':round(opponent.power + goals_for - goals_against,2)}, ignore_index = True)
-    
+
+        game_log_df = pd.concat([game_log_df, pd.DataFrame.from_dict([{'Date':game.date, 'Opponent':opponent.name, 'GF':int(goals_for), 'GA':int(goals_against), 'Performance':round(opponent.power + goals_for - goals_against,2)}])], ignore_index = True)
+            
     game_log_df.index += 1 
     return team, game_log_df
 
@@ -377,7 +377,7 @@ def get_team_prob_breakdown(team_list, param):
     prob_breakdown_df = pd.DataFrame(columns = ['Opponent', 'Record', 'PCT', 'Win Probability', 'Lose by 5+', 'Lose by 4', 'Lose by 3', 'Lose by 2', 'Lose by 1', 'Win by 1', 'Win by 2', 'Win by 3', 'Win by 4', 'Win by 5+'])
     for opp_team in team_list:
         if opp_team is not team:
-            prob_breakdown_df = prob_breakdown_df.append({'Opponent': opp_team.name, 
+            prob_breakdown_df = pd.concat([prob_breakdown_df, pd.DataFrame.from_dict([{'Opponent': opp_team.name, 
             'Record': opp_team.record,
             'PCT': f'{opp_team.calc_pct():.3f}',
             'Win Probability':f'{calc_prob(team, opp_team, param)*100:.2f}%', 
@@ -390,7 +390,7 @@ def get_team_prob_breakdown(team_list, param):
             'Win by 2': f'{calc_spread(team, opp_team, param, 1.5, 2.5)*100:.2f}%', 
             'Win by 3': f'{calc_spread(team, opp_team, param, 2.5, 3.5)*100:.2f}%', 
             'Win by 4': f'{calc_spread(team, opp_team, param, 3.5, 4.5)*100:.2f}%',
-            'Win by 5+': f'{calc_spread(team, opp_team, param, 4.5, "inf")*100:.2f}%'}, ignore_index = True)
+            'Win by 5+': f'{calc_spread(team, opp_team, param, 4.5, "inf")*100:.2f}%'}])], ignore_index = True)
 
     prob_breakdown_df = prob_breakdown_df.set_index('Opponent')
     prob_breakdown_df = prob_breakdown_df.sort_values(by=['PCT'], ascending=False)
