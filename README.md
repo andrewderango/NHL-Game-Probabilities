@@ -49,6 +49,11 @@ The following is an example of the output of the custom game selector. The user 
 This returns a CSV of every game played in the season, sorted from the biggest upset to the smallest. The quantification of an upset is done by subtracting the actual goal differential of the game by the expected goal differential, based on the model. Below, it seems that the biggest upset of the 2022-23 season was the Colorado Avalanche's 7-0 victory over the Ottawa Senators on January 14th, 2023. They were expected to win by 0.69 goals but won by 7.
 <img width="1261" alt="Screenshot 2023-10-24 at 4 36 10 PM" src="https://github.com/andrewderango/NHL-Game-Probabilities/assets/93727693/b77c5c12-f025-4890-8389-39306e4ba9e5">
 
+### Best Performances
+This returns a CSV of every team's games, their opponent, the score, and the team's performance. Their performance is determined by the goal differential of the game, adjusting for the strength of their opponent in that game. Below, it appears that the Boston Bruins' 7-0 victory over the Buffalo Sabres on March 19th, 2023 was the best team performance of the season while Montreal's 9-2 loss to Washington 
+on New Year's Eve 2022 was the worst.
+<img width="1250" alt="Screenshot 2023-10-24 at 5 16 26 PM" src="https://github.com/andrewderango/NHL-Game-Probabilities/assets/93727693/f9d8c839-562c-4d7a-9bcb-c35279c83187">
+
 ### Team Consistency Ratings
 The option shows how consistent teams were. This is defined as how much their actual performances differed from their expected performances, or how good the model was at predicting scores for their games. From the image below, it seems that the Minnesota Wild were the most consistent team, and the Detroit Red Wings were the least.
 <img width="1259" alt="Screenshot 2023-10-24 at 4 38 19 PM" src="https://github.com/andrewderango/NHL-Game-Probabilities/assets/93727693/544c1552-328b-46d0-95a2-20a2aacc0d57">
