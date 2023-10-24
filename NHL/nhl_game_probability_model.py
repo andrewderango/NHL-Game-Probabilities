@@ -438,7 +438,7 @@ def extra_menu(total_game_list, team_list, param):
         elif user_option == 5:
             team, team_probabilities = get_team_prob_breakdown(team_list, param)
             print(team_probabilities)
-            download_csv_option(team_probabilities, f'{team.name.replace(" ", "_").lower()}_game_log')
+            download_csv_option(team_probabilities, f'{team.name.replace(" ", "_").lower()}_prob_breakdown')
         elif user_option == 6:
             pass
 
