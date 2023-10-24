@@ -28,7 +28,7 @@ Here are the log loss values for the model over the past 3 seasons for the NHL a
 | 2021           | 0.638 | 0.639 |
 
 ## Featues
-The following is a brief explanation of some of the core features. 
+The following is a brief explanation of some of the core features. Note that the CSV's outputted by the program are included in the files for each of the leagues in this repo.
 
 ### Live Scraping 
 The program scrapes data from the NHL API every time it is run, so the data is updated automatically. The time it takes to scrape all game data is up to 3 seconds and depends on how late in the season it is.
