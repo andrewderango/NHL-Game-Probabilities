@@ -123,7 +123,7 @@ def game_team_object_creation(games_metadf):
 def scrape_nhl_data():
     scraped_df = pd.DataFrame(columns = ['GameID', 'Date', 'Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'Home Record', 'Away Record'])
 
-    with urllib.request.urlopen("https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&gameType=R") as url:
+    with urllib.request.urlopen("https://statsapi.web.nhl.com/api/v1/schedule?season=20232024&gameType=R") as url:
         schedule_metadata = json.load(url)
 
     for dates in schedule_metadata['dates']:
