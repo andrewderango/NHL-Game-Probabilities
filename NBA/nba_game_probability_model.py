@@ -263,7 +263,7 @@ def get_todays_games(param, team_list, games_metadf):
         '11': 'Nov',
         '12': 'Dec'}
 
-    todays_date = f"{datetime.today().strftime('%A')[:3]}, {month_dict[str(date.today()).split('-')[1]]} {str(date.today()).split('-')[2]}, {str(date.today()).split('-')[0]}"
+    todays_date = f"{datetime.today().strftime('%A')[:3]}, {month_dict[str(date.today()).split('-')[1]]} {int(str(date.today()).split('-')[2])}, {str(date.today()).split('-')[0]}"
 
     today_games_df = games_metadf[games_metadf['Date'] == todays_date] 
     today_games_df = today_games_df.reindex(columns = today_games_df.columns.tolist() + ['Home Win Prob','Visitor Win Prob'])
