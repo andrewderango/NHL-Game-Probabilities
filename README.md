@@ -73,6 +73,6 @@ Returns a Matplotlib plot encapsulating the model's predictions and accuracy. Th
 ## Update Log
 **February 1, 2023**: Addition of NHL Game Probability Model<br>
 **February 3, 2023**: Addition of NBA Game Probability Model<br>
-##February 3, 2023**: Addition of Custom League Probability Model<br>
-**April 14, 2023**: Pandas deprecated ```pd.DataFrame.append()```, replaced with ```concat()```
+**February 3, 2023**: Addition of Custom League Probability Model<br>
+**April 14, 2023**: Pandas deprecated ```pd.DataFrame.append()```, replaced with ```concat()```<br>
 **November 10, 2023**: NHL API was shut down and replaced. The API lost an endpoint with all games in a season, so now the program has to loop through each team's schedule and make 30x more API calls which increased runtime from ~1s to ~15s.<br>
