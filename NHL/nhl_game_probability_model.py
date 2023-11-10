@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 from scipy.stats import pearsonr
 from scipy.optimize import curve_fit
 from sklearn.metrics import log_loss
-import urllib.request, json
+from tqdm import tqdm
+import requests
+import json
 import os
 import time
 
@@ -121,17 +123,61 @@ def game_team_object_creation(games_metadf):
     return team_list, total_game_list
 
 def scrape_nhl_data():
-    scraped_df = pd.DataFrame(columns = ['GameID', 'Date', 'Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'Home Record', 'Away Record'])
+    data = []
+    team_id_dict = {}
 
-    with urllib.request.urlopen("https://statsapi.web.nhl.com/api/v1/schedule?season=20232024&gameType=R") as url:
-        schedule_metadata = json.load(url)
+    team_metadata = requests.get("https://api.nhle.com/stats/rest/en/team").json()
+    for team in tqdm(team_metadata['data'], desc='Scraping Games', dynamic_ncols=True, colour='Green', bar_format='{l_bar}{bar:30}{r_bar}{bar:-10b}'):
 
-    for dates in schedule_metadata['dates']:
-        for games in dates['games']:
-            if games['status']['abstractGameState'] == 'Final': #Completed games only
-                scraped_df = pd.concat([scraped_df, pd.DataFrame.from_dict([{'GameID':games['gamePk'], 'Date':dates['date'], 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}])], ignore_index = True)
+        if team['fullName'] in ['Atlanta Thrashers', 'Hartford Whalers', 'Minnesota North Stars', 'Quebec Nordiques', 'Winnipeg Jets (1979)', 'Colorado Rockies', 'Ottawa Senators (1917)', 'Hamilton Tigers', 'Pittsburgh Pirates', 'Philadelphia Quakers', 'Detroit Cougars', 'Montreal Wanderers', 'Quebec Bulldogs', 'Montreal Maroons', 'New York Americans', 'St. Louis Eagles', 'Oakland Seals', 'Atlanta Flames', 'Kansas City Scouts', 'Cleveland Barons', 'Detroit Falcons', 'Brooklyn Americans', 'California Golden Seals', 'Toronto Arenas', 'Toronto St. Patricks', 'NHL']:
+            continue
 
-    return scraped_df
+        team_id_dict[team['id']] = team['fullName']
+
+        game_metadata = requests.get(f"https://api-web.nhle.com/v1/club-schedule-season/{team['triCode']}/20232024").json()
+
+        for game in game_metadata['games']:
+            if game['gameType'] == 2 and game['gameState'] == 'OFF':
+                data.append({'GameID':game['id'], 'Date':game['gameDate'], 'Home Team':game['homeTeam']['id'], 'Home Goals':game['homeTeam']['score'], 'Away Goals':game['awayTeam']['score'], 'Away Team':game['awayTeam']['id'], "FinalState":game['gameOutcome']['lastPeriodType']})
+
+    scraped_df = pd.DataFrame(data)
+    scraped_df['Home Team'] = scraped_df['Home Team'].replace(team_id_dict)
+    scraped_df['Away Team'] = scraped_df['Away Team'].replace(team_id_dict)
+    scraped_df = scraped_df.drop_duplicates(subset='GameID')
+    scraped_df = scraped_df.sort_values(by=['GameID'])
+    scraped_df = calculate_records(scraped_df) # Adds home and away record columns
+    return scraped_df, team_id_dict
+
+def calculate_records(df):
+    records = {team: {'wins': 0, 'losses': 0, 'ot_losses': 0} for team in df['Home Team'].unique()}
+
+    for index, row in df.iterrows():
+        home_team = row['Home Team']
+        away_team = row['Away Team']
+        home_goals = row['Home Goals']
+        away_goals = row['Away Goals']
+        final_state = row['FinalState']
+
+        if home_goals > away_goals:
+            records[home_team]['wins'] += 1
+            if final_state == 'REG':
+                records[away_team]['losses'] += 1
+            else:
+                records[away_team]['ot_losses'] += 1
+        elif home_goals < away_goals:
+            if final_state == 'REG':
+                records[home_team]['losses'] += 1
+            else:
+                records[home_team]['ot_losses'] += 1
+            records[away_team]['wins'] += 1
+        else:
+            print(f'Critical Error: Found Tie | Infomation: {home_team} {home_goals}-{away_goals} {away_team}') # should never happen
+            return
+
+        df.loc[index, 'Home Record'] = f"{records[home_team]['wins']}-{records[home_team]['losses']}-{records[home_team]['ot_losses']}"
+        df.loc[index, 'Away Record'] = f"{records[away_team]['wins']}-{records[away_team]['losses']}-{records[away_team]['ot_losses']}"
+
+    return df
 
 def assign_power(team_list, iterations):
     for team in team_list:
@@ -225,32 +271,30 @@ def download_csv_option(df, filename):
     return
 
 
-def get_todays_games(param, team_list):
-    with urllib.request.urlopen("https://statsapi.web.nhl.com/api/v1/schedule?expand=schedule.linescore") as url:
-        today_schedule = json.load(url)
+def get_todays_games(param, team_list, team_id_dict):
+    today_schedule = requests.get("https://api-web.nhle.com/v1/schedule/now").json()
 
     today_games_df = pd.DataFrame(columns = ['GameID', 'Game State', 'Home Team', 'Home Goals', 'Away Goals', 'Away Team', 'Pre-Game Home Win Probability', 'Pre-Game Away Win Probability', 'Home Record', 'Away Record'])
 
     try:
-
-        date = today_schedule['dates'][0]['date']
-        for games in today_schedule['dates'][0]['games']:
+        date = today_schedule['gameWeek'][0]['date']
+        for games in today_schedule['gameWeek'][0]['games']:
             for team in team_list:
-                if team.name == games['teams']['home']['team']['name']:
+                if team.name == team_id_dict[games['homeTeam']['id']]:
                     home_team_obj = team
-                elif team.name == games['teams']['away']['team']['name']:
+                elif team.name == team_id_dict[games['awayTeam']['id']]:
                     away_team_obj = team
 
             home_win_prob = calc_prob(home_team_obj, away_team_obj, param)
             away_win_prob = 1-home_win_prob
 
-            if games['status']['abstractGameState'] == 'Live':
-                today_games_df = pd.concat([today_games_df, pd.DataFrame.from_dict([{'GameID':games['gamePk'], 'Game State':f"{games['linescore']['currentPeriodTimeRemaining']} {games['linescore']['currentPeriodOrdinal']}", 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}])], ignore_index=True)
-            elif games['status']['abstractGameState'] == 'Final':
-                today_games_df = pd.concat([today_games_df, pd.DataFrame.from_dict([{'GameID':games['gamePk'], 'Game State':'Final', 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}])], ignore_index=True)
-            else:
-                today_games_df = pd.concat([today_games_df, pd.DataFrame.from_dict([{'GameID':games['gamePk'], 'Game State':'Pre-Game', 'Home Team':games['teams']['home']['team']['name'], 'Home Goals':games['teams']['home']['score'], 'Away Goals':games['teams']['away']['score'],'Away Team':games['teams']['away']['team']['name'], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':f"{games['teams']['home']['leagueRecord']['wins']}-{games['teams']['home']['leagueRecord']['losses']}-{games['teams']['home']['leagueRecord']['ot']}", 'Away Record':f"{games['teams']['away']['leagueRecord']['wins']}-{games['teams']['away']['leagueRecord']['losses']}-{games['teams']['away']['leagueRecord']['ot']}"}])], ignore_index=True)
-        
+            if games['gameState'] == 'OFF': # final
+                today_games_df = pd.concat([today_games_df, pd.DataFrame.from_dict([{'GameID':games['id'], 'Game State':'Final', 'Home Team':team_id_dict[games['homeTeam']['id']], 'Home Goals':games['homeTeam']['score'], 'Away Goals':games['awayTeam']['score'], 'Away Team':team_id_dict[games['awayTeam']['id']], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':home_team_obj.record, 'Away Record':away_team_obj.record}])], ignore_index=True)
+            elif games['gameState'] == 'FUT': # pre-game
+                today_games_df = pd.concat([today_games_df, pd.DataFrame.from_dict([{'GameID':games['id'], 'Game State':'Pre-Game', 'Home Team':team_id_dict[games['homeTeam']['id']], 'Home Goals':games['homeTeam']['score'], 'Away Goals':games['awayTeam']['score'], 'Away Team':team_id_dict[games['awayTeam']['id']], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':home_team_obj.record, 'Away Record':away_team_obj.record}])], ignore_index=True)
+            else: # in progress
+                today_games_df = pd.concat([today_games_df, pd.DataFrame.from_dict([{'GameID':games['id'], 'Game State':f"Period {games['periodDescriptor']['number']}", 'Home Team':team_id_dict[games['homeTeam']['id']], 'Home Goals':games['homeTeam']['score'], 'Away Goals':games['awayTeam']['score'], 'Away Team':team_id_dict[games['awayTeam']['id']], 'Pre-Game Home Win Probability':f'{home_win_prob*100:.2f}%', 'Pre-Game Away Win Probability':f'{away_win_prob*100:.2f}%', 'Home Record':home_team_obj.record, 'Away Record':away_team_obj.record}])], ignore_index=True)
+
         today_games_df.index += 1 
 
     except IndexError:
@@ -498,13 +542,13 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
 def main():
     start_time = time.time()
 
-    games_metadf = scrape_nhl_data()
+    games_metadf, team_id_dict = scrape_nhl_data()
     iterations = 10
     team_list, total_game_list = game_team_object_creation(games_metadf)
     assign_power(team_list, iterations)
     power_df = prepare_power_rankings(team_list)
     xpoints, ypoints, param = logistic_regression(total_game_list)
-    date, today_games_df = get_todays_games(param, team_list)
+    date, today_games_df = get_todays_games(param, team_list, team_id_dict)
 
     computation_time = time.time()-start_time
     menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, total_game_list, team_list, date)
