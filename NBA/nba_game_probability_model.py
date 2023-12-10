@@ -282,8 +282,9 @@ def get_todays_games(param, team_list, games_metadf):
         team_name_obj_dict[home_team_name] = home_team_obj
         team_name_obj_dict[visiting_team_name] = visiting_team_obj
 
-    today_games_df['Home Win Prob'] = today_games_df.apply(lambda row: f"{calc_prob(team_name_obj_dict[row['Home Team']], team_name_obj_dict[row['Visiting Team']], param)*100:.2f}%", axis=1)
-    today_games_df['Visitor Win Prob'] = today_games_df.apply(lambda row: f"{calc_prob(team_name_obj_dict[row['Visiting Team']], team_name_obj_dict[row['Home Team']], param)*100:.2f}%", axis=1)
+    if not today_games_df.empty:
+        today_games_df['Home Win Prob'] = today_games_df.apply(lambda row: f"{calc_prob(team_name_obj_dict[row['Home Team']], team_name_obj_dict[row['Visiting Team']], param)*100:.2f}%", axis=1)
+        today_games_df['Visitor Win Prob'] = today_games_df.apply(lambda row: f"{calc_prob(team_name_obj_dict[row['Visiting Team']], team_name_obj_dict[row['Home Team']], param)*100:.2f}%", axis=1)
 
     return date.today(), today_games_df
 
@@ -518,11 +519,11 @@ def menu(power_df, today_games_df, xpoints, ypoints, param, computation_time, to
             print(power_df)
             download_csv_option(power_df, 'power_rankings')
         elif user_option == 2:
-            if today_games_df is not None:
+            if not today_games_df.empty:
                 print(today_games_df)
                 download_csv_option(today_games_df, f'{date}_games')
             else:
-                print('There are no games today!')
+                print('There are no games today!\n')
         elif user_option == 3:
             home_team, away_team, custom_game_df = custom_game_selector(param, team_list)
             print(custom_game_df)
