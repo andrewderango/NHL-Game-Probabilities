@@ -134,7 +134,7 @@ def scrape_nhl_data():
 
         team_id_dict[team['id']] = team['fullName']
 
-        game_metadata = requests.get(f"https://api-web.nhle.com/v1/club-schedule-season/{team['triCode']}/20232024").json()
+        game_metadata = requests.get(f"https://api-web.nhle.com/v1/club-schedule-season/{team['triCode']}/20242025").json()
 
         for game in game_metadata['games']:
             if game['gameType'] == 2 and game['gameState'] == 'OFF':
@@ -149,7 +149,11 @@ def scrape_nhl_data():
     return scraped_df, team_id_dict
 
 def calculate_records(df):
-    records = {team: {'wins': 0, 'losses': 0, 'ot_losses': 0} for team in df['Home Team'].unique()}
+    # Combine unique teams from both 'Home Team' and 'Away Team' columns
+    all_teams = pd.concat([df['Home Team'], df['Away Team']]).unique()
+    
+    # Initialize records dictionary for all teams
+    records = {team: {'wins': 0, 'losses': 0, 'ot_losses': 0} for team in all_teams}
 
     for index, row in df.iterrows():
         home_team = row['Home Team']
@@ -157,7 +161,7 @@ def calculate_records(df):
         home_goals = row['Home Goals']
         away_goals = row['Away Goals']
         final_state = row['FinalState']
-
+        
         if home_goals > away_goals:
             records[home_team]['wins'] += 1
             if final_state == 'REG':
@@ -171,7 +175,7 @@ def calculate_records(df):
                 records[home_team]['ot_losses'] += 1
             records[away_team]['wins'] += 1
         else:
-            print(f'Critical Error: Found Tie | Infomation: {home_team} {home_goals}-{away_goals} {away_team}') # should never happen
+            print(f'Critical Error: Found Tie | Information: {home_team} {home_goals}-{away_goals} {away_team}') # should never happen
             return
 
         df.loc[index, 'Home Record'] = f"{records[home_team]['wins']}-{records[home_team]['losses']}-{records[home_team]['ot_losses']}"
