@@ -130,12 +130,12 @@ def scrape_nba_data():
     season_months = ['october', 'november', 'december', 'january', 'february', 'march', 'april']
 
     for month in season_months:
-        url = f'https://www.basketball-reference.com/leagues/NBA_2024_games-{month}.html'
+        url = f'https://www.basketball-reference.com/leagues/NBA_2025_games-{month}.html'
         soup = BeautifulSoup(requests.get(url).text, 'lxml')
         url_table = soup.find('table', id='schedule')
 
         if month == season_months[0]:
-            headers = ['Date', 'Start (EST)', 'Visiting Team', 'Visitor Score', 'Home Team', 'Home Score', 'Box Score Links', 'OT', 'Attendance', 'Arena', 'Notes']
+            headers = ['Date', 'Start (EST)', 'Visiting Team', 'Visitor Score', 'Home Team', 'Home Score', 'Box Score Links', 'OT', 'Attendance', 'LOG', 'Arena', 'Notes']
             scraped_df = pd.DataFrame(columns = headers)
 
         for url_row in url_table.find_all('tr')[1:]:
