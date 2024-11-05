@@ -183,13 +183,13 @@ def calculate_records(df):
 
     return df
 
-def assign_power(team_list, iterations):
+def assign_power(team_list, epochs):
     for team in team_list:
         team.agd = team.calc_agd()
         team.pct = team.calc_pct()
 
-    for iteration in range(iterations):
-        # print(f'ITERATION {iteration+1}')
+    for epochs in range(epochs):
+        # print(f'EPOCH {epochs+1}')
         for team in team_list:
             team.schedule = team.calc_sched()
             team.power = team.calc_power()
@@ -550,9 +550,9 @@ def main():
     start_time = time.time()
 
     games_metadf, team_id_dict = scrape_nhl_data()
-    iterations = 10
+    epochs = 50
     team_list, total_game_list = game_team_object_creation(games_metadf)
-    assign_power(team_list, iterations)
+    assign_power(team_list, epochs)
     power_df = prepare_power_rankings(team_list)
     xpoints, ypoints, param = logistic_regression(total_game_list)
     date, today_games_df = get_todays_games(param, team_list, team_id_dict)

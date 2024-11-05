@@ -1,6 +1,18 @@
-# NHL/NBA Game Probabilities
+# Game Outcome Prediction Model
 
-This is a machine learning model determines the probability of each outcome for any NHL or NBA game. This includes the probability of each team winning, as well as the probabilities for goal spreads. All NHL data is scraped from the [NHL's own API](https://api-web.nhle.com/v1/schedule/now). All NBA data is scraped from [basketball-reference.com](https://www.basketball-reference.com/) via BeautifulSoup. As these sources are updated live, the predictive model updates in real-time. There are many other features available that show the user interesting data about the league (listed below), depending on the league. The NHL's game probability model is the most robust of the leagues below, and offers the most features.
+This repository presents a real-time machine learning-based predictive modeling framework designed to estimate the probabilities of game outcomes based on historical scores and team performance metrics for any head-to-head sport. The core of the model revolves around the Iterative Convergence Power Algorithm (ICPA), which performs a convergence-driven iterative refinement process to optimize team strength estimators. These refined team strength estimators are then employed as features in a novel variant of a logistic regression model.
+
+The model effectively predicts various game outcomes, including the probabilities of each team winning, as well as the likelihood of specific goal spreads and margins of victory or defeat. By integrating advanced statistical algorithms with unique machine learning adaptations and real-time data processing, this framework provides an elegant and robust solution for analyzing various match outcomes and the competitive landscape of the league.
+
+## Iterative Convergence Power Algorithm
+
+The Iterative Convergence Power Algorithm (ICPA) is an elegant but powerful method designed to refine team strength estimators through a convergence-based iterative process. It operates by evaluating each team's historical performance in relation to their opponents, adjusting the power values assigned to teams based on their game outcomes. The algorithm iteratively updates these estimators, utilizing feedback from previous iterations to enhance accuracy and stability. This continuous refinement allows the model to dynamically adapt to the changing competitive landscape, ensuring that the team strengths reflect the most current performance data. By serving as robust features for a novel variant of logistic regression, the ICPA plays a crucial role in predicting game outcomes, enabling precise estimations of win probabilities, goal spreads, and margins of victory or defeat. Its ability to converge upon stable and reliable team strength assessments makes it a key component of the predictive modeling framework.
+
+## Scope
+
+While primarily focused on the NHL and NBA, the model also includes native support for additional leagues, such as the KHL, AHL, and CFB, allowing for versatile applications across various competitive contexts. Users can seamlessly integrate their own league data by inputting a spreadsheet of game scores, enabling the model to adapt to new datasets and making it a flexible tool for analyzing different leagues and competitions. By harnessing the power of historical performance data and employing sophisticated statistical techniques, this model serves as an advanced tool for sports analysts, data scientists, and enthusiasts looking to gain insights into game outcome probabilities across multiple leagues.
+
+## Specifications
 
 ### Feature Availability
 
@@ -20,7 +32,7 @@ This is a machine learning model determines the probability of each outcome for 
 
 ### Data Sources
 
-| League         | Data Source(s)                                                                 |
+| League         | Data Source(s) |
 |----------------|-------------------------------------------------------------------------------|
 | NHL            | [NHL API](https://api-web.nhle.com/v1/schedule/now) |
 | NBA            | [Basketball Reference](https://www.basketball-reference.com/) |
@@ -30,7 +42,7 @@ This is a machine learning model determines the probability of each outcome for 
 | Custom Leagues | User-uploaded CSV |
 
 
-## Model Accuracy
+### Model Accuracy
 
 Here are the log loss values for the model over the past 3 seasons for the NHL and NBA. 
 | Season         | NHL   | NBA   |
@@ -88,4 +100,4 @@ Returns a Matplotlib plot encapsulating the model's predictions and accuracy. Th
 **February 3, 2023**: Addition of Custom League Probability Model<br>
 **April 14, 2023**: Pandas deprecated ```pd.DataFrame.append()```, replaced with ```concat()```<br>
 **November 10, 2023**: NHL API was shut down and replaced. The API lost an endpoint with all games in a season, so now the program has to loop through each team's schedule and make 30x more API calls which increased runtime from ~1s to ~15s.<br>
-**November 4, 2024**: Added custom league support for the KHL, AHL.
+**November 4, 2024**: Added custom league support for the KHL, AHL, and CFB.
