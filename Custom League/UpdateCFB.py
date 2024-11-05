@@ -11,7 +11,7 @@ import csv
 
 # Browser options
 options = Options()
-options.add_argument("--headless")  # Run in headless mode
+options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
@@ -22,8 +22,8 @@ options.add_argument("--window-size=1920,1080")
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
-# URL for AHL results in English
-url = 'https://www.flashscore.ca/hockey/usa/ahl/results/'
+# URL for NCAA results in English
+url = 'https://www.flashscore.ca/football/usa/ncaa/results/'
 driver.get(url)
 
 # Close the cookie banner if it appears
@@ -87,7 +87,7 @@ for match in matches:
     match_data.append(match_info)
 
 # Save the collected match data to a CSV file
-csv_file_path = 'game_data.csv'  # Updated file name for clarity
+csv_file_path = 'Custom League/game_data.csv'  # Updated file name for clarity
 with open(csv_file_path, mode='w', newline='', encoding='utf-8') as csv_file:
     fieldnames = ['Home Team', 'Home Score', 'Visitor Score', 'Visiting Team']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
