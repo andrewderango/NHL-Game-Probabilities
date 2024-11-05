@@ -4,19 +4,31 @@ This is a machine learning model determines the probability of each outcome for 
 
 ### Feature Availability
 
-| Feature                                            | NHL     | NBA     | Custom Leagues |
-|----------------------------------------------------|:-------:|:-------:|:--------------:|
-| Team Power Rankings                                | &check; | &check; |     &check;    |
-| Game Probabilities for Today's Games               | &check; | &check; |                |
-| Live Scores for Today's Games                      | &check; |         |                |
-| Game Probabilities a Game Between any 2 Teams      | &check; | &check; |     &check;    |
-| View Biggest Single-Game Upsets                    | &check; | &check; |     &check;    |
-| View Best Single-Game Team Performances            | &check; | &check; |     &check;    |
-| Most Consistent Teams                              | &check; | &check; |     &check;    |
-| Team Game Logs                                     | &check; | &check; |     &check;    |
-| Win Probability for a Team Against all Other Teams | &check; | &check; |     &check;    |
-| View Model Accuracy                                | &check; | &check; |     &check;    |
-| Download CSV's                                     | &check; | &check; |     &check;    |
+| Feature                                            | NHL     | NBA     | CFB     | KHL     | AHL     | Custom Leagues |
+|----------------------------------------------------|:-------:|:-------:|:-------:|:-------:|:-------:|:--------------:|
+| Team Power Rankings                                | &check; | &check; | &check; | &check; | &check; |     &check;    |
+| Game Probabilities for Today's Games               | &check; | &check; |         |         |         |                |
+| Live Scores for Today's Games                      | &check; |         |         |         |         |                |
+| Game Probabilities a Game Between any 2 Teams      | &check; | &check; | &check; | &check; | &check; |     &check;    |
+| View Biggest Single-Game Upsets                    | &check; | &check; | &check; | &check; | &check; |     &check;    |
+| View Best Single-Game Team Performances            | &check; | &check; | &check; | &check; | &check; |     &check;    |
+| Most Consistent Teams                              | &check; | &check; | &check; | &check; | &check; |     &check;    |
+| Team Game Logs                                     | &check; | &check; | &check; | &check; | &check; |     &check;    |
+| Win Probability for a Team Against all Other Teams | &check; | &check; | &check; | &check; | &check; |     &check;    |
+| View Model Accuracy                                | &check; | &check; | &check; | &check; | &check; |     &check;    |
+| Download CSV's                                     | &check; | &check; | &check; | &check; | &check; |     &check;    |
+
+### Data Sources
+
+| League         | Data Source(s)                                                                 |
+|----------------|-------------------------------------------------------------------------------|
+| NHL            | [NHL API](https://api-web.nhle.com/v1/schedule/now) |
+| NBA            | [Basketball Reference](https://www.basketball-reference.com/) |
+| CFB            | [FlashScore](https://www.flashscore.ca/football/usa/ncaa/results/) |
+| KHL            | [FlashScore](https://www.flashscore.ca/hockey/russia/khl/results/) |
+| AHL            | [FlashScore](https://www.flashscore.ca/hockey/usa/ahl/results/) |
+| Custom Leagues | User-uploaded CSV |
+
 
 ## Model Accuracy
 
@@ -76,3 +88,4 @@ Returns a Matplotlib plot encapsulating the model's predictions and accuracy. Th
 **February 3, 2023**: Addition of Custom League Probability Model<br>
 **April 14, 2023**: Pandas deprecated ```pd.DataFrame.append()```, replaced with ```concat()```<br>
 **November 10, 2023**: NHL API was shut down and replaced. The API lost an endpoint with all games in a season, so now the program has to loop through each team's schedule and make 30x more API calls which increased runtime from ~1s to ~15s.<br>
+**November 4, 2024**: Added custom league support for the KHL, AHL.
