@@ -19,6 +19,7 @@ class Team():
         self.schedule = 0
         self.power = 0
         self.prev_power = 0
+        self.iteration_powers = []
         self.goals_for = 0
         self.goals_against = 0
         self.record = '0-0-0'
@@ -193,6 +194,7 @@ def assign_power(team_list, epochs):
         for team in team_list:
             team.schedule = team.calc_sched()
             team.power = team.calc_power()
+            team.iteration_powers.append(team.power)
             # print(f'{team.name}\t\tAGD: {team.calc_agd():.2f}\tSCHEDULE: {team.schedule:.2f}\t\tPOWER: {team.power:.2f}')
         for team in team_list:
             team.prev_power = team.power
@@ -374,10 +376,10 @@ def get_best_performances(total_game_list):
     return performance_df
 
 def get_team_consistency(team_list):
-    consistency_df = pd.DataFrame(columns = ['Team', 'Rating', 'Consistency (z-Score)'])
+    consistency_df = pd.DataFrame(columns = ['Team', 'Consistency Rating', 'Consistency (z-Score)'])
 
     for team in team_list:
-        consistency_df = pd.concat([consistency_df, pd.DataFrame.from_dict([{'Team':team.name, 'Rating':f'{team.power:.2f}', 'Consistency (z-Score)':team.calc_consistency()}])], ignore_index = True)
+        consistency_df = pd.concat([consistency_df, pd.DataFrame.from_dict([{'Team':team.name, 'Consistency Rating':f'{team.power:.2f}', 'Consistency (z-Score)':team.calc_consistency()}])], ignore_index = True)
 
     consistency_df['Consistency (z-Score)'] = consistency_df['Consistency (z-Score)'].apply(lambda x: (x-consistency_df['Consistency (z-Score)'].mean())/-consistency_df['Consistency (z-Score)'].std())
 
@@ -447,6 +449,25 @@ def get_team_prob_breakdown(team_list, param):
     prob_breakdown_df = prob_breakdown_df.sort_values(by=['PCT'], ascending=False)
     return team, prob_breakdown_df
 
+def get_power_convergence(team_list):
+    power_convergence = pd.DataFrame(columns = ['Team', 'Iteration', 'Power'])
+
+    for team in team_list:
+        for i in range(len(team.iteration_powers)):
+            power_convergence = pd.concat([power_convergence, pd.DataFrame.from_dict([{'Team':team.name, 'Iteration':i+1, 'Power':team.iteration_powers[i]}])], ignore_index=True)
+     
+    plt.figure(figsize=(10, 6))
+    for team in team_list:
+        plt.plot(power_convergence[power_convergence['Team'] == team.name]['Iteration'], power_convergence[power_convergence['Team'] == team.name]['Power'], label=team.name)
+    plt.title('Power Convergence Over Iterations')
+    plt.xlabel('Iteration')
+    plt.ylabel('Power')
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+    return power_convergence
+
 def extra_menu(total_game_list, team_list, param):
     while True:
         print("""--EXTRAS MENU--
@@ -455,14 +476,15 @@ def extra_menu(total_game_list, team_list, param):
     3. Most Consistent Teams
     4. Team Game Logs
     5. Team Probability Big Board
-    6. Exit to Main Menu""")
+    6. Iterative Power Convergence
+    7. Exit to Main Menu""")
 
         valid = False
         while valid == False:
             user_option = input('Enter a menu option: ')
             try:
                 user_option = int(user_option)
-                if user_option >= 1 and user_option <= 6:
+                if user_option >= 1 and user_option <= 7:
                     print()
                     valid = True
                 else:
@@ -491,6 +513,10 @@ def extra_menu(total_game_list, team_list, param):
             print(team_probabilities)
             download_csv_option(team_probabilities, f'{team.name.replace(" ", "_").lower()}_prob_breakdown')
         elif user_option == 6:
+            power_convergence = get_power_convergence(team_list)
+            print(power_convergence)
+            download_csv_option(power_convergence, 'iterative_power_convergence')
+        elif user_option == 7:
             pass
 
         return
@@ -550,7 +576,7 @@ def main():
     start_time = time.time()
 
     games_metadf, team_id_dict = scrape_nhl_data()
-    epochs = 50
+    epochs = 5
     team_list, total_game_list = game_team_object_creation(games_metadf)
     assign_power(team_list, epochs)
     power_df = prepare_power_rankings(team_list)
